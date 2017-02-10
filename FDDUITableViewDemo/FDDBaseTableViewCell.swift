@@ -180,19 +180,3 @@ class FDDBaseTableViewCell: UITableViewCell {
 }
 
 
-
-
-extension UITableView {
-    func cellForIndexPath(_ indexPath: IndexPath, cellClass: AnyClass?) -> FDDBaseTableViewCell? {
-        if (cellClass?.isSubclass(of: FDDBaseTableViewCell.self))! {
-            let identifier = NSStringFromClass(cellClass!) + "ID"
-            var cell = self.dequeueReusableCell(withIdentifier: identifier)
-            if cell == nil {
-                self.register(cellClass, forCellReuseIdentifier: identifier)
-                cell = self.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-            }
-            return cell as! FDDBaseTableViewCell?
-        }
-        return nil
-    }
-}

@@ -12,14 +12,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var dataArr: NSMutableArray = NSMutableArray()
     
+    func backButtonAction() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        let con = FDDTableViewConverter()
+        con.vc = self
+        
+        
         tableView.separatorStyle = .none
         self.view.addSubview(tableView)
+        
+//        UIView.animate(withDuration: 1, animations: { 
+//            
+//
+//        }) { (<#Bool#>) in
+//            <#code#>
+//        }
+        
+        self.fddRegisterTableViewMethod("tableView: numberOfRowsInSection:", handle: {
+            (AnyObject) in
+            
+        })
+        
         
         
         let randomSources = ["Swift is now open source!",
