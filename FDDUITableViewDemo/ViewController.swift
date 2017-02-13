@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FDDBaseTableViewCellDelegate {
     
     var dataArr: NSMutableArray = NSMutableArray()
+    let con = FDDTableViewConverter()
     
     func backButtonAction() {
         
@@ -20,16 +21,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        
-        let con = FDDTableViewConverter()
-        con.vc = self
-        
-        
         tableView.separatorStyle = .none
         self.view.addSubview(tableView)
+        
+        
+        con.vc = self
+        tableView.delegate = con
+        tableView.dataSource = con
+        
+
         
 //        UIView.animate(withDuration: 1, animations: { 
 //            
@@ -38,10 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            <#code#>
 //        }
         
-        self.fddRegisterTableViewMethod("tableView: numberOfRowsInSection:", handle: {
-            (AnyObject) in
-            
-        })
+
         
         
         
@@ -61,6 +58,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func dddd() -> NSNumber {
+        return NSNumber(value: 100)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArr.count
     }
@@ -70,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
         cell.setCellData(cellModel.cellData, delegate: self)
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: dataArr.count)
-        return cell as UITableViewCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

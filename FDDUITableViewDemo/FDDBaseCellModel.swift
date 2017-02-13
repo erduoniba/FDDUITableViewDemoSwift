@@ -19,7 +19,7 @@ class FDDBaseCellModel: NSObject {
         super.init()
     }
     
-    convenience init(cellClass: AnyClass?, cellHeight: Float, cellData: AnyObject?) {
+    public convenience init(cellClass: AnyClass?, cellHeight: Float, cellData: AnyObject?) {
         self.init()
         self.cellClass = cellClass
         self.cellHeight = cellHeight
