@@ -60,6 +60,9 @@ class FDDBaseTableViewCell: UITableViewCell {
         }
     }
     
+    class func cellHeight(_ data: AnyObject?) -> Float {
+        return self.cellHeight(data, boundWidth: Float(UIScreen.main.bounds.size.width))
+    }
     
     class func cellHeight(_ data: AnyObject?, boundWidth: Float) -> Float {
         return 44.0
