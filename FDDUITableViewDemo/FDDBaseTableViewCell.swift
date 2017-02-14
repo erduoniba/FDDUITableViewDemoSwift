@@ -10,7 +10,7 @@ import UIKit
 
 @objc
 protocol FDDBaseTableViewCellDelegate: NSObjectProtocol {
-    @objc optional func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject)
+    @objc optional func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?)
 }
 
 
@@ -79,6 +79,7 @@ class FDDBaseTableViewCell: UITableViewCell {
     
     func setCellData(_ data: AnyObject?, delegate: FDDBaseTableViewCellDelegate?) {
         fddCellData = data
+        fddDelegate = delegate
         print("子类实现")
     }
     

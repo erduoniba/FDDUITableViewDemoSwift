@@ -23,6 +23,12 @@ class HDTableViewCell: FDDBaseTableViewCell {
         
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if (self.fddDelegate != nil) && (self.fddDelegate?.responds(to: #selector(FDDBaseTableViewCellDelegate.fddTableViewCell(cell:object:))))! {
+            self.fddDelegate?.fddTableViewCell!(cell: self, object: nil)
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -32,6 +38,7 @@ class HDTableViewCell: FDDBaseTableViewCell {
 
     override func setCellData(_ data: AnyObject?, delegate: FDDBaseTableViewCellDelegate?) {
         self.fddCellData = data
+        self.fddDelegate = delegate
         self.textLabel?.text = self.fddCellData as? String
     }
     

@@ -8,39 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FDDBaseTableViewCellDelegate {
-    
-    var dataArr: NSMutableArray = NSMutableArray()
-    let con = FDDTableViewConverter()
-    
-    func backButtonAction() {
-        
-    }
+class ViewController: FDDBaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.separatorStyle = .none
         self.view.addSubview(tableView)
-        
-        
-        con.vc = self
-        tableView.delegate = con
-        tableView.dataSource = con
-        
-
-        
-//        UIView.animate(withDuration: 1, animations: { 
-//            
-//
-//        }) { (<#Bool#>) in
-//            <#code#>
-//        }
-        
-
-        
-        
         
         let randomSources = ["Swift is now open source!",
                              "We are excited by this new chapter in the story of Swift. After Apple unveiled the Swift programming language, it quickly became one of the fastest growing languages in history. Swift makes it easy to write software that is incredibly fast and safe by design. Now that Swift is open source, you can help make the best general purpose programming language available everywhere",
@@ -48,42 +25,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                              "Welcome to the Swift community. Together we are working to build a better programming language for everyone.",
                              "– The Swift Team"]
 
-        
-        for _ in 0...20 {
+        for _ in 0...30 {
             let randomIndex: Int = Int(arc4random() % 5)
             let cellData: String = randomSources[randomIndex]
             let cellModel = FDDBaseCellModel.modelWithCellClass(HDTableViewCell.self, cellHeight: HDTableViewCell.cellHeight(cellData as AnyObject?, boundWidth: Float(self.view.frame.size.width)), cellData: cellData as AnyObject?)
-            dataArr.add(cellModel)
+            self.dataArr.add(cellModel)
         }
-        
     }
     
-    func dddd() -> NSNumber {
-        return NSNumber(value: 100)
+    override internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
+        print("xxx")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArr.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellModel: FDDBaseCellModel = dataArr.object(at: indexPath.row) as! FDDBaseCellModel
-        let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
-        cell.setCellData(cellModel.cellData, delegate: self)
-        cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: dataArr.count)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellModel: FDDBaseCellModel = dataArr.object(at: indexPath.row) as! FDDBaseCellModel
-        return CGFloat(cellModel.cellHeight)
-    }
-    
-    // MARK: - FDDBaseTableViewCellDelegate
-    internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject) {
-        if cell.isMember(of: HDTableViewCell.self) {
-            print("HDTableViewCell的代理")
-        }
+    override internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
 
     override func didReceiveMemoryWarning() {

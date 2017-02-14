@@ -8,54 +8,33 @@
 
 import UIKit
 
-class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableViewDelegate {
-    
-    weak var vc: UIViewController?
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-//        if (vc?.responds(to: #selector(UITableViewDataSource.tableView(_:numberOfRowsInSection:))))! {
-//            let rows = vc?.perform(#selector(UITableViewDataSource.tableView(_:numberOfRowsInSection:)), with: tableView, with: String(section)).takeRetainedValue()
-//            return rows as! Int
-//        }
-        
-        let sel:Selector = Selector(("dddd"))
-        if (vc?.responds(to: sel))! {
-            let height: NSNumber = vc?.perform(sel).takeRetainedValue() as! NSNumber
-            print("height: \(height.intValue)")
-        }
-        
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if (vc?.responds(to: #selector(UITableViewDataSource.tableView(_:cellForRowAt:))))! {
-            let cell: FDDBaseTableViewCell = vc?.perform(#selector(UITableViewDataSource.tableView(_:cellForRowAt:)), with: tableView, with: indexPath).takeRetainedValue() as! FDDBaseTableViewCell
-            
-            return cell
-        }
-        
-        
-        
-        return FDDBaseTableViewCell()
-    }
-    
 
+
+extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArr.count
+    }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let sel = #selector(tableView(_:heightForRowAt:))
-        if (vc?.responds(to: sel))! {
-            let height = vc?.perform(sel, with: tableView, with: indexPath).takeRetainedValue()
-            return height as! CGFloat
+    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
+        let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
+        cell.setCellData(cellModel.cellData, delegate: self)
+        cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: self.dataArr.count)
+        return cell
+    }
+    
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
+        return CGFloat(cellModel.cellHeight)
+    }
+    
+    // MARK: - FDDBaseTableViewCellDelegate
+    internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
+        if cell.isMember(of: HDTableViewCell.self) {
+            print("HDTableViewCell的代理")
         }
-        
-        return 44.0
     }
 }
-
-
-
 
 
 extension UITableView {
@@ -70,27 +49,5 @@ extension UITableView {
             return cell as! FDDBaseTableViewCell?
         }
         return nil
-    }
-}
-
-extension UIViewController {
-    
-    private struct AssociatedKeys {
-        static var fddTableViewConverter: NSMutableDictionary?
-    }
-    
-    var fddTableViewConverter: NSMutableDictionary {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.fddTableViewConverter) as! NSMutableDictionary
-        }
-        
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.fddTableViewConverter, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    
-    func fddRegisterTableViewMethod(_ method: String, handle: ((AnyObject) -> Void) ) {
-        self.fddTableViewConverter.setValue(handle, forKey: method)
     }
 }
