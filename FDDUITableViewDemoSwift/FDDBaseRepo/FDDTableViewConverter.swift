@@ -1,6 +1,6 @@
 //
 //  FDDTableViewConverter.swift
-//  FDDUITableViewDemo
+//  FDDUITableViewDemoSwift
 //
 //  Created by denglibing on 2017/2/10.
 //  Copyright © 2017年 denglibing. All rights reserved.
@@ -11,7 +11,9 @@ import UIKit
 
 
 extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+    @objc(tableView:numberOfRowsInSection:) func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
     }
     

@@ -1,6 +1,6 @@
 //
 //  HDTableViewCell.swift
-//  FDDUITableViewDemo
+//  FDDUITableViewDemoSwift
 //
 //  Created by denglibing on 2017/2/9.
 //  Copyright © 2017年 denglibing. All rights reserved.
@@ -16,17 +16,15 @@ class HDTableViewCell: FDDBaseTableViewCell {
         self.textLabel?.font = UIFont.systemFont(ofSize: 14)
         self.textLabel?.numberOfLines = 0;
         self.separateLineOffset = 10;
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tableViewCellAction))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        if (self.fddDelegate != nil) && (self.fddDelegate?.responds(to: #selector(FDDBaseTableViewCellDelegate.fddTableViewCell(cell:object:))))! {
-            self.fddDelegate?.fddTableViewCell!(cell: self, object: nil)
-        }
     }
     
     override func layoutSubviews() {
@@ -50,6 +48,12 @@ class HDTableViewCell: FDDBaseTableViewCell {
                                           attributes: dic as? [String : Any],
                                           context: nil)
         return 20.0 + Float(rect.size.height)
+    }
+    
+    func tableViewCellAction() -> Void {
+        if (self.fddDelegate != nil) && (self.fddDelegate?.responds(to: #selector(FDDBaseTableViewCellDelegate.fddTableViewCell(cell:object:))))! {
+            self.fddDelegate?.fddTableViewCell!(cell: self, object: nil)
+        }
     }
     
 }

@@ -1,6 +1,6 @@
 //
 //  FDDBaseCellModel.swift
-//  FDDUITableViewDemo
+//  FDDUITableViewDemoSwift
 //
 //  Created by denglibing on 2017/2/9.
 //  Copyright © 2017年 denglibing. All rights reserved.

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9FDC5BC1E49C01D00F2A60F"
-               BuildableName = "FDDUITableViewDemo.app"
-               BlueprintName = "FDDUITableViewDemo"
-               ReferencedContainer = "container:FDDUITableViewDemo.xcodeproj">
+               BuildableName = "FDDUITableViewDemoSwift.app"
+               BlueprintName = "FDDUITableViewDemoSwift"
+               ReferencedContainer = "container:FDDUITableViewDemoSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9FDC5BC1E49C01D00F2A60F"
-            BuildableName = "FDDUITableViewDemo.app"
-            BlueprintName = "FDDUITableViewDemo"
-            ReferencedContainer = "container:FDDUITableViewDemo.xcodeproj">
+            BuildableName = "FDDUITableViewDemoSwift.app"
+            BlueprintName = "FDDUITableViewDemoSwift"
+            ReferencedContainer = "container:FDDUITableViewDemoSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9FDC5BC1E49C01D00F2A60F"
-            BuildableName = "FDDUITableViewDemo.app"
-            BlueprintName = "FDDUITableViewDemo"
-            ReferencedContainer = "container:FDDUITableViewDemo.xcodeproj">
+            BuildableName = "FDDUITableViewDemoSwift.app"
+            BlueprintName = "FDDUITableViewDemoSwift"
+            ReferencedContainer = "container:FDDUITableViewDemoSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9FDC5BC1E49C01D00F2A60F"
-            BuildableName = "FDDUITableViewDemo.app"
-            BlueprintName = "FDDUITableViewDemo"
-            ReferencedContainer = "container:FDDUITableViewDemo.xcodeproj">
+            BuildableName = "FDDUITableViewDemoSwift.app"
+            BlueprintName = "FDDUITableViewDemoSwift"
+            ReferencedContainer = "container:FDDUITableViewDemoSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
