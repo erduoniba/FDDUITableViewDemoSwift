@@ -56,8 +56,5 @@ class ViewController: FDDBaseViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-
 }
 
