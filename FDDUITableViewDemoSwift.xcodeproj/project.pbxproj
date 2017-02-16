@@ -18,6 +18,7 @@
 		D903486C1E541D6300C9F626 /* FDDTableViewConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348681E541D6300C9F626 /* FDDTableViewConverter.swift */; };
 		D903486D1E541D6300C9F626 /* FDDBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */; };
 		D903486E1E541D6300C9F626 /* FDDBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903486A1E541D6300C9F626 /* FDDBaseViewController.swift */; };
+		D90348821E5596A400C9F626 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D90348811E5596A400C9F626 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D90348681E541D6300C9F626 /* FDDTableViewConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDTableViewConverter.swift; sourceTree = "<group>"; };
 		D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDBaseCellModel.swift; sourceTree = "<group>"; };
 		D903486A1E541D6300C9F626 /* FDDBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDBaseViewController.swift; sourceTree = "<group>"; };
+		D90348811E5596A400C9F626 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D9FDC5BD1E49C01D00F2A60F /* FDDUITableViewDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDDUITableViewDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +51,7 @@
 		D903484D1E541CD500C9F626 /* FDDUITableViewDemoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D90348811E5596A400C9F626 /* README.md */,
 				D903484E1E541CD500C9F626 /* AppDelegate.swift */,
 				D903485A1E541CD500C9F626 /* ViewController.swift */,
 				D90348581E541CD500C9F626 /* HDTableViewCell.swift */,
@@ -168,6 +171,7 @@
 				D90348651E541CD500C9F626 /* ViewController.swift in Sources */,
 				D90348631E541CD500C9F626 /* HDTableViewCell.swift in Sources */,
 				D903486E1E541D6300C9F626 /* FDDBaseViewController.swift in Sources */,
+				D90348821E5596A400C9F626 /* README.md in Sources */,
 				D903486C1E541D6300C9F626 /* FDDTableViewConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

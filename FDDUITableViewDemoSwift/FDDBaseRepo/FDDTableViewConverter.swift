@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-
 extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
-    
     
     @objc(tableView:numberOfRowsInSection:) func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
