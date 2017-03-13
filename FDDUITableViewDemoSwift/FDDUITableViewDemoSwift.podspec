@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     # Pod Dependencies
 
     s.subspec 'FDDBaseRepo' do |BaseRepo|
-        BaseRepo.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
+        BaseRepo.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/FDDBaseRepo/*'
     end
 
    # s.subspec 'KTJPushQueueForNavigation' do |pqn|
