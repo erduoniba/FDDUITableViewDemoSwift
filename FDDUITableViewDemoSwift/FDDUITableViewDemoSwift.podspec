@@ -13,12 +13,10 @@ Pod::Spec.new do |s|
     s.framework    = 'UIKit'
     s.requires_arc = true
 
-    #s.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
-
     # Pod Dependencies
 
-    s.subspec 'FDDBaseRepo' do |BaseRepo|
-        BaseRepo.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/FDDBaseRepo/*'
+    s.subspec 'FDDBaseRepos' do |ss|
+        ss.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
     end
 
    # s.subspec 'KTJPushQueueForNavigation' do |pqn|
