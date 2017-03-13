@@ -1,0 +1,6 @@
+framework module Pods_FDDUITableViewDemoSwift {
+  umbrella header "Pods-FDDUITableViewDemoSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

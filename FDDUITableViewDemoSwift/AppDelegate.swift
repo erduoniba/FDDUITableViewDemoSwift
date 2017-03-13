@@ -8,6 +8,10 @@
 
 import UIKit
 
+typealias resultBlock = (_ params: Array<Any>) -> Any
+
+typealias MyClosure = (_ a: Int, _ b: Int) -> Int
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +20,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let resultBlocks = { (val1: Int, Val2: Int) -> Int in
+            return val1 + Val2
+        }
+        
+        
+        self.register(index: 0) { (param: Array) -> Any in
+            return 1
+        }
+        
+        print("result: \(resultBlocks(12, 43))")
+        
+        
+        typealias MyClosure = (_ a: Int, _ b: Int) -> Int
+        var closure : MyClosure?
+        closure = { (a: Int, b: Int) -> Int in
+            return a+b
+        }
+        print(closure!(1, 2));
+        
+        self.doSomeThing { (a: Int, b: Int) -> Int in
+            return a * b
+        }
+        
         return true
+    }
+    
+    func doSomeThing(closure: MyClosure) {
+        print(closure(1, 2))
+    }
+    
+    func register(index: Int, pram: resultBlock) {
+         pram(["1", "2", "2"])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
