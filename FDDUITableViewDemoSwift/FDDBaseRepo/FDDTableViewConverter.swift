@@ -46,8 +46,8 @@ extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
     
     // MARK: - FDDBaseTableViewCellDelegate
     internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
-        if cell.isMember(of: HDTableViewCell.self) {
-            print("HDTableViewCell的代理")
+        if cell.isMember(of: FDDBaseTableViewCell.self) {
+            print("FDDBaseTableViewCell的代理")
         }
     }
 }
