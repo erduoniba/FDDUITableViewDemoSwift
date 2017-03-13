@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.summary      = 'FDDUITableViewDemoSwift'
 
     s.platform     =  :ios, '8.0'
-    s.homepage     = "http://EXAMPLE/harry"
+    s.homepage     = "https://github.com/erduoniba/FDDUITableViewDemoSwift"
 
     s.source       =  { :git => 'https://github.com/erduoniba/FDDUITableViewDemoSwift.git', :tag => "#{s.version}"}
     s.module_name  = 'FDDUITableViewDemoSwift'
