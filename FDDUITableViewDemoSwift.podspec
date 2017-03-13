@@ -14,6 +14,10 @@ Pod::Spec.new do |s|
     s.requires_arc = true
 
     s.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
+    
+    s.subspec 'FDDBaseRepo' do |baseRepo|
+        baseRepo.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
+    end
 
     # Pod Dependencies
 
