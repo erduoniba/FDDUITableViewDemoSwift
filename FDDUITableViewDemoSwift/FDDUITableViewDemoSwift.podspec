@@ -5,8 +5,10 @@ Pod::Spec.new do |s|
     s.author       = { 'denglibing' => 'denglibing@fangdd.com' }
     s.summary      = 'FDDUITableViewDemoSwift'
 
-    s.platform     =  :ios, '7.0'
-    s.source       =  { :git => 'https://github.com/erduoniba/FDDUITableViewDemoSwift.git'}
+    s.platform     =  :ios, '8.0'
+    s.homepage     = "http://EXAMPLE/harry"
+    s.version      = "0.0.1"
+    s.source       =  { :git => 'https://github.com/erduoniba/FDDUITableViewDemoSwift.git', :tag => "#{s.version}"}
     s.module_name  = 'FDDUITableViewDemoSwift'
     s.framework    = 'UIKit'
     s.requires_arc = true
