@@ -45,7 +45,7 @@ extension FDDBaseTableViewController: FDDBaseTableViewCellDelegate {
     }
     
     // MARK: - FDDBaseTableViewCellDelegate
-    internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
+    public func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
         if cell.isMember(of: FDDBaseTableViewCell.self) {
             print("FDDBaseTableViewCell的代理")
         }
@@ -67,13 +67,13 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
     var dataArr = NSMutableArray()
     weak var tableViewCarrier: AnyObject?
     
-    convenience init(withTableViewCarrier tableViewCarrier: AnyObject, dataSources: NSMutableArray) {
+    convenience public init(withTableViewCarrier tableViewCarrier: AnyObject, dataSources: NSMutableArray) {
         self.init()
         self.tableViewCarrier = tableViewCarrier
         self.dataArr = dataSources
     }
     
-    func registerTableViewMethod(selector: Selector, handleParams params: fddTableViewConterterBlock) {
+    open func registerTableViewMethod(selector: Selector, handleParams params: fddTableViewConterterBlock) {
         selectorBlocks.setObject(params, forKey: NSStringFromSelector(selector) as NSCopying)
     }
     

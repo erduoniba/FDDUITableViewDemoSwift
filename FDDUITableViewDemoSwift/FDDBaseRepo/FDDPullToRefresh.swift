@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 import PullToRefresh
 
-class FDDPullToRefresh: PullToRefresh {
+public class FDDPullToRefresh: PullToRefresh {
     convenience init(at position: Position) {
         let refreshView = FDDPullToRefreshView()
         let animator = FDDPullToRefreshAnimator(refreshView: refreshView)
@@ -25,7 +25,7 @@ class FDDPullToRefresh: PullToRefresh {
 
 
 // MARK: 自定义的PullToRefreshView
-class FDDPullToRefreshView: UIView {
+public class FDDPullToRefreshView: UIView {
     var fddIcon = UIImageView()
     var fddCircle = UIImageView()
     var fddState = UILabel()
@@ -48,7 +48,7 @@ class FDDPullToRefreshView: UIView {
         self.addSubview(fddState)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         fddIcon.center = CGPoint(x: self.frame.size.width / 2 - 42, y: self.frame.size.height / 2)
@@ -76,7 +76,7 @@ class FDDPullToRefreshView: UIView {
 }
 
 // MARK: 自定义PullToRefreshView的动画(Animator)
-class FDDPullToRefreshAnimator: NSObject, RefreshViewAnimator {
+public class FDDPullToRefreshAnimator: NSObject, RefreshViewAnimator {
     private let refreshView: FDDPullToRefreshView
     init(refreshView: FDDPullToRefreshView) {
         self.refreshView = refreshView

@@ -9,7 +9,7 @@
 import UIKit
 
 @objc
-protocol FDDBaseTableViewCellDelegate: NSObjectProtocol {
+public protocol FDDBaseTableViewCellDelegate: NSObjectProtocol {
     @objc optional func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?)
 }
 
@@ -23,7 +23,7 @@ enum FDDBaseTableViewCellType {
     case FDDBaseTableViewCellSingle     //上下线都显示，originx=0
 }
 
-public class FDDBaseTableViewCell: UITableViewCell {
+open class FDDBaseTableViewCell: UITableViewCell {
     
     weak var fddDelegate: FDDBaseTableViewCellDelegate?
     var fddIndexPath: IndexPath?
@@ -60,33 +60,33 @@ public class FDDBaseTableViewCell: UITableViewCell {
         }
     }
     
-    class func cellHeight(_ data: AnyObject?) -> Float {
+    open class func cellHeight(_ data: AnyObject?) -> Float {
         return self.cellHeight(data, boundWidth: Float(UIScreen.main.bounds.size.width))
     }
     
-    class func cellHeight(_ data: AnyObject?, boundWidth: Float) -> Float {
+    open class func cellHeight(_ data: AnyObject?, boundWidth: Float) -> Float {
         return 44.0
     }
     
     
     // MARK: - public func
-    func setBorderLine(backgroundColor: UIColor) {
+    open func setBorderLine(backgroundColor: UIColor) {
         topLineView.backgroundColor = backgroundColor
         bottomLineView.backgroundColor = backgroundColor
     }
     
-    func setCellData(_ data: AnyObject?) {
+    open func setCellData(_ data: AnyObject?) {
         self.setCellData(data, delegate: nil)
         print("子类实现")
     }
     
-    func setCellData(_ data: AnyObject?, delegate: FDDBaseTableViewCellDelegate?) {
+    open func setCellData(_ data: AnyObject?, delegate: FDDBaseTableViewCellDelegate?) {
         fddCellData = data
         fddDelegate = delegate
         print("子类实现")
     }
     
-    func setSeperatorAtIndexPath(_ indexPath: IndexPath, numberOfRowsInSection: Int) {
+    open func setSeperatorAtIndexPath(_ indexPath: IndexPath, numberOfRowsInSection: Int) {
         if numberOfRowsInSection == 1 {
             self.cellType = .FDDBaseTableViewCellSingle
         }
@@ -118,7 +118,7 @@ public class FDDBaseTableViewCell: UITableViewCell {
     }()
     
     // MARK: - override
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.setup()
@@ -130,12 +130,12 @@ public class FDDBaseTableViewCell: UITableViewCell {
         self.setup()
     }
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         switch _cellType {
@@ -166,7 +166,7 @@ public class FDDBaseTableViewCell: UITableViewCell {
         }
     }
     
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
     }

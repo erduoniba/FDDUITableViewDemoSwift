@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class FDDBaseCellModel: NSObject {
+open class FDDBaseCellModel: NSObject {
     var cellData:   AnyObject?
     var cellClass:  AnyClass?
     var delegate:   AnyObject?
@@ -26,7 +26,7 @@ public class FDDBaseCellModel: NSObject {
         self.cellData = cellData
     }
 
-    class func modelWithCellClass(_ cellClass: AnyClass?, cellHeight: Float, cellData: AnyObject?) -> FDDBaseCellModel {
+    open class func modelWithCellClass(_ cellClass: AnyClass?, cellHeight: Float, cellData: AnyObject?) -> FDDBaseCellModel {
         let cellModel: FDDBaseCellModel = FDDBaseCellModel(cellClass: cellClass, cellHeight: cellHeight, cellData: cellData)
         return cellModel
     }

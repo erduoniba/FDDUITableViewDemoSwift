@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: 依赖房多多的FDDCustomerCommon/BaseViewController 和 GitHub的PullToRefresher
-public class FDDBaseTableViewController: UIViewController {
+open class FDDBaseTableViewController: UIViewController {
     
     var dataArr = NSMutableArray()
     var tableView: UITableView!
@@ -32,13 +32,13 @@ public class FDDBaseTableViewController: UIViewController {
     }
     
     // 1:初始化带TableView的Controller
-    convenience init(tableViewStyle style: UITableViewStyle) {
+    convenience public init(tableViewStyle style: UITableViewStyle) {
         self.init()
         
         tableViewStyle = style
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = []
@@ -58,7 +58,7 @@ public class FDDBaseTableViewController: UIViewController {
     }
 
     // 2:给TableViewController添加下拉刷新数据功能，子类重载 requestData 方法来刷新数据
-    func addRefreshView() {
+    open func addRefreshView() {
         haveTopRefresh = true
         tableView.addPullToRefresh(FDDPullToRefresh(at: .top)) { [weak self] in
             withExtendedLifetime(self){
@@ -69,7 +69,7 @@ public class FDDBaseTableViewController: UIViewController {
     }
     
     // 2:给TableViewController添加上拉追加更多数据功能，子类重载 requestData 方法来刷新数据
-    func addLoadMoreView() {
+    open func addLoadMoreView() {
         haveBottomRefresh = true
         tableView.addPullToRefresh(FDDPullToRefresh(at: .bottom)) { [weak self] in
             withExtendedLifetime(self){
@@ -80,11 +80,11 @@ public class FDDBaseTableViewController: UIViewController {
     }
     
     // MARK: 刷新追加后的回调方法
-    func requestData() {
+    open func requestData() {
         
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
