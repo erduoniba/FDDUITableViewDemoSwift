@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     
     s.subspec 'FDDBaseRepo' do |baseRepo|
         baseRepo.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
-        baseRepo.dependency = 'PullToRefresher'
+        baseRepo.dependency  'PullToRefresher'
     end
 
     # Pod Dependencies
