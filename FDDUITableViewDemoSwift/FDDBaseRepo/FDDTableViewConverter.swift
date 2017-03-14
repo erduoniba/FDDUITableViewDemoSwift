@@ -64,8 +64,8 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
     }
     
     private var selectorBlocks = NSMutableDictionary()
-    var dataArr = NSMutableArray()
-    weak var tableViewCarrier: AnyObject?
+    open var dataArr = NSMutableArray()
+    open weak var tableViewCarrier: AnyObject?
     
     convenience public init(withTableViewCarrier tableViewCarrier: AnyObject, dataSources: NSMutableArray) {
         self.init()

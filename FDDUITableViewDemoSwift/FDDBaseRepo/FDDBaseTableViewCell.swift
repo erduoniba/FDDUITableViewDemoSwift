@@ -25,10 +25,10 @@ enum FDDBaseTableViewCellType {
 
 open class FDDBaseTableViewCell: UITableViewCell {
     
-    weak var fddDelegate: FDDBaseTableViewCellDelegate?
-    var fddIndexPath: IndexPath?
-    var fddCellData: AnyObject?
-    var separateLineOffset: CGFloat = 0.0
+    open weak var fddDelegate: FDDBaseTableViewCellDelegate?
+    open var fddIndexPath: IndexPath?
+    open var fddCellData: AnyObject?
+    open var separateLineOffset: CGFloat = 0.0
     var sizeOnePx: CGFloat = 1.0 / UIScreen.main.scale
     
     var _cellType: FDDBaseTableViewCellType = .FDDBaseTableViewCellNormal

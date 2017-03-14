@@ -11,13 +11,13 @@ import UIKit
 // MARK: 依赖房多多的FDDCustomerCommon/BaseViewController 和 GitHub的PullToRefresher
 open class FDDBaseTableViewController: UIViewController {
     
-    var dataArr = NSMutableArray()
-    var tableView: UITableView!
-    var tableViewConverter: FDDTableViewConverter!
+    open var dataArr = NSMutableArray()
+    open var tableView: UITableView!
+    open var tableViewConverter: FDDTableViewConverter!
     var tableViewStyle: UITableViewStyle = .plain
     
-    var pageIndex: Int = 0
-    var pageSize: Int = 20
+    open var pageIndex: Int = 0
+    open var pageSize: Int = 20
     
     fileprivate var haveTopRefresh: Bool = false
     fileprivate var haveBottomRefresh: Bool = false
