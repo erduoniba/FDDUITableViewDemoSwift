@@ -57,7 +57,7 @@ extension FDDBaseTableViewController: FDDBaseTableViewCellDelegate {
 typealias fddTableViewConterterBlock = (_ params: Array<Any>) -> AnyObject?
 
 // 通过转换类来处理通用的tableView方法，特殊需要自己处理的使用 registerTableViewMethod 方式处理
-class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableViewDelegate {
+public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     deinit {
         print(NSStringFromClass(FDDTableViewConverter.self) + " dealloc")

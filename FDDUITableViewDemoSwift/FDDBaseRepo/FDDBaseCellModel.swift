@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDDBaseCellModel: NSObject {
+public class FDDBaseCellModel: NSObject {
     var cellData:   AnyObject?
     var cellClass:  AnyClass?
     var delegate:   AnyObject?

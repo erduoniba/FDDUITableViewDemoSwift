@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: 依赖房多多的FDDCustomerCommon/BaseViewController 和 GitHub的PullToRefresher
-class FDDBaseTableViewController: UIViewController {
+public class FDDBaseTableViewController: UIViewController {
     
     var dataArr = NSMutableArray()
     var tableView: UITableView!

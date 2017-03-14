@@ -23,7 +23,7 @@ enum FDDBaseTableViewCellType {
     case FDDBaseTableViewCellSingle     //上下线都显示，originx=0
 }
 
-class FDDBaseTableViewCell: UITableViewCell {
+public class FDDBaseTableViewCell: UITableViewCell {
     
     weak var fddDelegate: FDDBaseTableViewCellDelegate?
     var fddIndexPath: IndexPath?
