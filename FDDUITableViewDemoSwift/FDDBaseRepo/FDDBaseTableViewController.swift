@@ -38,7 +38,7 @@ public class FDDBaseTableViewController: UIViewController {
         tableViewStyle = style
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = []
@@ -84,7 +84,7 @@ public class FDDBaseTableViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

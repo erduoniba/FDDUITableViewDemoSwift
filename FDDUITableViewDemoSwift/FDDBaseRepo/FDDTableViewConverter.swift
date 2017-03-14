@@ -96,11 +96,11 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
         return nil
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let selector = #selector(tableView(_:heightForRowAt:))
         let cellHeight = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
         if (cellHeight != nil)  {
@@ -111,7 +111,7 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
         return CGFloat(cellModel.cellHeight)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selector = #selector(tableView(_:cellForRowAt:))
         let closureCell = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
         if (closureCell != nil)  {
@@ -126,7 +126,7 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selector = #selector(tableView(_:didSelectRowAt:))
         _ = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
     }
