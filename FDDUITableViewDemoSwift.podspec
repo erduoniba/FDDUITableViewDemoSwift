@@ -12,12 +12,12 @@ Pod::Spec.new do |s|
     s.module_name  = 'FDDUITableViewDemoSwift'
     s.framework    = 'UIKit'
     s.requires_arc = true
-    s.resources = [FDDUITableViewDemoSwift/FDDBaseRepo/fddImage.xcassets/*]
 
     # Pod Dependencies
 
     s.subspec 'FDDBaseRepo' do |ss|
         ss.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
+        ss.resources = ["FDDUITableViewDemoSwift/FDDBaseRepo/fddImage.xcassets/*"]
         ss.dependency 'PullToRefresher'
     #   ss.dependency 'FDDCustomerCommon/BaseViewController/BaseViewController.*', :git => 'ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common'
     end
