@@ -15,6 +15,11 @@ class FDDPullToRefresh: PullToRefresh {
         let refreshView = FDDPullToRefreshView()
         let animator = FDDPullToRefreshAnimator(refreshView: refreshView)
         self.init(refreshView: refreshView, animator: animator, height:refreshView.frame.size.height, position: position)
+        
+        //springDamping的范围为0.0f到1.0f，数值越小「弹簧」的振动效果越明显
+        self.springDamping = 1
+        //initialSpringVelocity则表示初始的速度，数值越大一开始移动越快
+        self.initialSpringVelocity = 0
     }
 }
 
@@ -85,7 +90,9 @@ class FDDPullToRefreshAnimator: NSObject, RefreshViewAnimator {
             self.refreshView.stopAnimation()
             break
             
-        case .releasing(let progress):
+        //case .releasing(let progress):
+        case .releasing:
+            self.refreshView.stopAnimation()
             break
             
         case .loading:

@@ -1,6 +1,0 @@
-framework module FDDCustomerCommon {
-  umbrella header "FDDCustomerCommon-umbrella.h"
-
-  export *
-  module * { export * }
-}

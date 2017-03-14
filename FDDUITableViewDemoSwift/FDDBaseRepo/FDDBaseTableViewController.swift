@@ -8,10 +8,8 @@
 
 import UIKit
 
-import FDDCustomerCommon
-
 // MARK: 依赖房多多的FDDCustomerCommon/BaseViewController 和 GitHub的PullToRefresher
-class FDDBaseTableViewController: BaseViewController {
+class FDDBaseTableViewController: UIViewController {
     
     var dataArr = NSMutableArray()
     var tableView: UITableView!
@@ -43,6 +41,8 @@ class FDDBaseTableViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.edgesForExtendedLayout = []
+        
         tableViewConverter = FDDTableViewConverter.init(withTableViewCarrier: self, dataSources: self.dataArr)
         tableView = UITableView(frame: self.view.bounds, style: tableViewStyle)
         tableView.autoresizingMask = [UIViewAutoresizing.flexibleHeight,

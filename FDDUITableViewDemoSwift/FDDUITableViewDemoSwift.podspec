@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     s.subspec 'FDDBaseRepo' do |ss|
         ss.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
         ss.dependency 'PullToRefresher'
+    #   ss.dependency 'FDDCustomerCommon/BaseViewController/BaseViewController.*', :git => 'ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common'
     end
 
    # s.subspec 'KTJPushQueueForNavigation' do |pqn|

@@ -42,7 +42,6 @@
 		D90348811E5596A400C9F626 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D98FBB661E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FDDUITableViewDemoSwift.podspec; sourceTree = "<group>"; };
 		D98FBB891E76A3DB008EDDC1 /* FDDPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDPullToRefresh.swift; sourceTree = "<group>"; };
-		D98FBB8B1E76A6D3008EDDC1 /* FDDBaseRepo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDDBaseRepo-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9DA5BB61E5EA5D4000AE387 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		D9FDC5BD1E49C01D00F2A60F /* FDDUITableViewDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDDUITableViewDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E7B0FFCD97D761C0FFB168 /* Pods-FDDUITableViewDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDDUITableViewDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDDUITableViewDemoSwift/Pods-FDDUITableViewDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 		D90348661E541D4600C9F626 /* FDDBaseRepo */ = {
 			isa = PBXGroup;
 			children = (
-				D98FBB8B1E76A6D3008EDDC1 /* FDDBaseRepo-Bridging-Header.h */,
 				D903486A1E541D6300C9F626 /* FDDBaseTableViewController.swift */,
 				D90348681E541D6300C9F626 /* FDDTableViewConverter.swift */,
 				D90348671E541D6300C9F626 /* FDDBaseTableViewCell.swift */,
@@ -392,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "47c59c2c-9929-44d7-84cf-3d573ebaebbc";
 				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "FDDUITableViewDemoSwift/FDDBaseRepo/FDDBaseRepo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -409,7 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.FDDUITableViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FDDUITableViewDemoSwift/FDDBaseRepo/FDDBaseRepo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

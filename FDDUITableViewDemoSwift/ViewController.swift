@@ -42,6 +42,7 @@ class ViewController: FDDBaseTableViewController {
         }
     }
     
+    
     func disposeTableViewConverter() {
         self.tableViewConverter.dataArr = self.dataArr
         
@@ -76,7 +77,7 @@ class ViewController: FDDBaseTableViewController {
     }
     
     override func requestData() {
-        let delayTime = DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
             if self.pageIndex == 0 {
                 self.dataArr.removeAllObjects()

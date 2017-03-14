@@ -1,24 +1,12 @@
 PODS:
-  - FDDCustomerCommon/BaseViewController (0.0.7)
   - PullToRefresher (2.0.2)
 
 DEPENDENCIES:
-  - FDDCustomerCommon/BaseViewController (from `ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common`)
   - PullToRefresher
 
-EXTERNAL SOURCES:
-  FDDCustomerCommon:
-    :git: ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common
-
-CHECKOUT OPTIONS:
-  FDDCustomerCommon:
-    :commit: 1d9d3cf3f4c2c3357445f50800a45b4b9d76c6a8
-    :git: ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common
-
 SPEC CHECKSUMS:
-  FDDCustomerCommon: 333486a0e512babf5b258faafec3216a557aee60
   PullToRefresher: 5e101a8c3523e67ee0291375ba932ef59e0853c2
 
-PODFILE CHECKSUM: b66b2444d20fafac3c2d4315a75481111e55710b
+PODFILE CHECKSUM: b83db8063260de8ecb1e7239f5661729d62fb5b0
 
 COCOAPODS: 1.2.1.beta.1
