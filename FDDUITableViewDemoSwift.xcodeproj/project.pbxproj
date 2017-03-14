@@ -20,9 +20,9 @@
 		D903486D1E541D6300C9F626 /* FDDBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */; };
 		D903486E1E541D6300C9F626 /* FDDBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903486A1E541D6300C9F626 /* FDDBaseTableViewController.swift */; };
 		D90348821E5596A400C9F626 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D90348811E5596A400C9F626 /* README.md */; };
-		D98FBB671E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D98FBB661E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec */; };
 		D98FBB8A1E76A3DB008EDDC1 /* FDDPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBB891E76A3DB008EDDC1 /* FDDPullToRefresh.swift */; };
 		D98FBB9C1E77B72C008EDDC1 /* fddImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98FBB9B1E77B72C008EDDC1 /* fddImage.xcassets */; };
+		D98FBBA01E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */; };
 		D9DA5BB71E5EA5D4000AE387 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA5BB61E5EA5D4000AE387 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +41,9 @@
 		D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDBaseCellModel.swift; sourceTree = "<group>"; };
 		D903486A1E541D6300C9F626 /* FDDBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDBaseTableViewController.swift; sourceTree = "<group>"; };
 		D90348811E5596A400C9F626 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D98FBB661E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FDDUITableViewDemoSwift.podspec; sourceTree = "<group>"; };
 		D98FBB891E76A3DB008EDDC1 /* FDDPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDPullToRefresh.swift; sourceTree = "<group>"; };
 		D98FBB9B1E77B72C008EDDC1 /* fddImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = fddImage.xcassets; sourceTree = "<group>"; };
+		D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FDDUITableViewDemoSwift.podspec; sourceTree = SOURCE_ROOT; };
 		D9DA5BB61E5EA5D4000AE387 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		D9FDC5BD1E49C01D00F2A60F /* FDDUITableViewDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDDUITableViewDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E7B0FFCD97D761C0FFB168 /* Pods-FDDUITableViewDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDDUITableViewDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDDUITableViewDemoSwift/Pods-FDDUITableViewDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		D903484D1E541CD500C9F626 /* FDDUITableViewDemoSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D98FBB661E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec */,
+				D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */,
 				D90348811E5596A400C9F626 /* README.md */,
 				D903484E1E541CD500C9F626 /* AppDelegate.swift */,
 				D903485A1E541CD500C9F626 /* ViewController.swift */,
@@ -193,9 +193,9 @@
 			files = (
 				D903485C1E541CD500C9F626 /* Assets.xcassets in Resources */,
 				D903485E1E541CD500C9F626 /* Main.storyboard in Resources */,
+				D98FBBA01E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */,
 				D903485D1E541CD500C9F626 /* LaunchScreen.storyboard in Resources */,
 				D90348641E541CD500C9F626 /* Info.plist in Resources */,
-				D98FBB671E765F40008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */,
 				D98FBB9C1E77B72C008EDDC1 /* fddImage.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
