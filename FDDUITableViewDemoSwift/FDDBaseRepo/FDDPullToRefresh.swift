@@ -34,11 +34,11 @@ public class FDDPullToRefreshView: UIView {
         self.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         
         fddCircle.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        fddCircle.image = UIImage(named: "fdd_logo_refresh_circle")
+        fddCircle.image = UIImage(named: "fdd_logo_refresh_circle", in: Bundle(for: FDDPullToRefreshView.self), compatibleWith: nil)
         self.addSubview(fddCircle)
         
         fddIcon.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
-        fddIcon.image = UIImage(named: "fdd_logo_refresh")
+        fddIcon.image = UIImage(named: "fdd_logo_refresh", in: Bundle(for: FDDPullToRefreshView.self), compatibleWith: nil)
         self.addSubview(fddIcon)
         
         fddState.frame = CGRect(x: 0, y: 0, width: 100, height: 20)
