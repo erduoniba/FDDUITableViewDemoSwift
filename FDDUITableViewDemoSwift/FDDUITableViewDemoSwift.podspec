@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     s.module_name  = 'FDDUITableViewDemoSwift'
     s.framework    = 'UIKit'
     s.requires_arc = true
+    s.resources = [FDDUITableViewDemoSwift/FDDBaseRepo/fddImage.xcassets/*]
 
     # Pod Dependencies
 
