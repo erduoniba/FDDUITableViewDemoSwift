@@ -7,18 +7,13 @@
 //
 
 import UIKit
-//import FeedBackIOS
 
 /// 使用注册方式统一处理 UITableViewDataSource和UITableViewDelegate， 特殊的方法使用注册模式处理
-class ViewController: FDDBaseViewController {
+class ViewController: FDDBaseTableViewController {
     
     deinit {
         print(NSStringFromClass(ViewController.self) + " dealloc")
     }
-    
-    var tableViewConverter : FDDTableViewConverter?
-    
-//    var bugWindow : FDDBugWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +23,8 @@ class ViewController: FDDBaseViewController {
         self.disposeDataSources()
         self.disposeTableViewConverter()
         
-//        bugWindow = FDDBugWindow.sharedInstance
-//        bugWindow?.isHidden = true;       //是否隐藏提bug按钮，隐藏后将只支持摇一摇提bug
-//        bugWindow?.redmineProjectId = 158;    //项目Id， 2表示经纪人iOS
-//        bugWindow?.redminePriorityId = 10;  //默认问题优先级
-//        bugWindow?.redmineUrl = "https://redmine.fangdd.net/issues.json";    //redmine后台地址
-//        bugWindow?.redmineKey = "e31cace473b669d5b4d954c3365b09e3d63cc25c";   //redmine token
-//        bugWindow?.run();                   //启动
+        self.addRefreshView()
+        self.addLoadMoreView()
     }
     
     func disposeDataSources () {
@@ -53,22 +43,16 @@ class ViewController: FDDBaseViewController {
     }
     
     func disposeTableViewConverter() {
-        tableViewConverter = FDDTableViewConverter.init(withTableViewCarrier: self, dataSources: self.dataArr)
+        self.tableViewConverter.dataArr = self.dataArr
         
-        let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
-        tableView.delegate = tableViewConverter
-        tableView.dataSource = tableViewConverter
-        tableView.separatorStyle = .none
-        self.view.addSubview(tableView)
-        
-        tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDelegate.tableView(_:didSelectRowAt:)), handleParams: { [weak self]  (params: Array) -> AnyObject? in
+        self.tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDelegate.tableView(_:didSelectRowAt:)), handleParams: { [weak self]  (params: Array) -> AnyObject? in
             withExtendedLifetime(self){
                 self?.navigationController?.pushViewController(ViewController2(), animated: true)
                 }!
             return nil
         })
         
-        tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDataSource.tableView(_:cellForRowAt:)), handleParams: { [weak self] (params : Array) -> AnyObject? in
+        self.tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDataSource.tableView(_:cellForRowAt:)), handleParams: { [weak self] (params : Array) -> AnyObject? in
             return withExtendedLifetime(self){ () -> FDDBaseTableViewCell in
                 let tableView: UITableView = params[0] as! UITableView
                 let indexPath: IndexPath = params[1] as! IndexPath
@@ -80,7 +64,7 @@ class ViewController: FDDBaseViewController {
             }
         })
         
-        tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDelegate.tableView(_:heightForRowAt:)), handleParams: { [weak self] (params: Array) -> AnyObject? in
+        self.tableViewConverter?.registerTableViewMethod(selector: #selector(UITableViewDelegate.tableView(_:heightForRowAt:)), handleParams: { [weak self] (params: Array) -> AnyObject? in
             let height = withExtendedLifetime(self){ () -> CGFloat in
                 let indexPath: IndexPath = params[1] as! IndexPath
                 let cellModel: FDDBaseCellModel = self?.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
@@ -89,6 +73,23 @@ class ViewController: FDDBaseViewController {
             
             return height as AnyObject?
         })
+    }
+    
+    override func requestData() {
+        let delayTime = DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            if self.pageIndex == 0 {
+                self.dataArr.removeAllObjects()
+                self.disposeDataSources()
+                self.tableView.reloadData()
+                self.tableView.endRefreshing(at: .top)
+            }
+            else {
+                self.disposeDataSources()
+                self.tableView.reloadData()
+                self.tableView.endRefreshing(at: .bottom)
+            }
+        }
     }
     
     override internal func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {

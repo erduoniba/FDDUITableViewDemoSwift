@@ -8,6 +8,8 @@
 
 import UIKit
 
+//import FeedBackIOS
+
 typealias resultBlock = (_ params: Array<Any>) -> Any
 
 typealias MyClosure = (_ a: Int, _ b: Int) -> Int
@@ -16,7 +18,7 @@ typealias MyClosure = (_ a: Int, _ b: Int) -> Int
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+//    var bugWindow : FDDBugWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -44,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return a * b
         }
         
+        //        bugWindow = FDDBugWindow.sharedInstance
+        //        bugWindow?.isHidden = true;       //是否隐藏提bug按钮，隐藏后将只支持摇一摇提bug
+        //        bugWindow?.redmineProjectId = 158;    //项目Id， 2表示经纪人iOS
+        //        bugWindow?.redminePriorityId = 10;  //默认问题优先级
+        //        bugWindow?.redmineUrl = "https://redmine.fangdd.net/issues.json";    //redmine后台地址
+        //        bugWindow?.redmineKey = "e31cace473b669d5b4d954c3365b09e3d63cc25c";   //redmine token
+        //        bugWindow?.run();                   //启动
+        
         return true
     }
     
@@ -52,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func register(index: Int, pram: resultBlock) {
-         pram(["1", "2", "2"])
+        print(pram(["1", "2", "2"]))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -7,53 +7,160 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CA8E25239886D26CE15A56AED8C1BA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		605E7466F194B25F4A23E2953FD79231 /* Pods-FDDUITableViewDemoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E575458168A90DBD629733352AEF01 /* Pods-FDDUITableViewDemoSwift-dummy.m */; };
-		617E2FFE49FE889FC61E62FB51CC5A5D /* Pods-FDDUITableViewDemoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BDB35DD4087651EB12AEAB1AB1AFA92 /* Pods-FDDUITableViewDemoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		049B6A0B80A5E172C94007EF95B776BE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04489E7B1BEDB08A0FCDAAD4A10838E /* AdSupport.framework */; };
+		17204800CFA341E01280F8945A65889A /* DefaultViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B44E3B56D8C4869499035FC7A4D010C /* DefaultViewAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C34296E630B7F80803F97498233F878 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F26A927246D26B1704601A6F668EF82 /* CoreTelephony.framework */; };
+		2285AE7369E646E0AB85C967BD7370B4 /* Pods-FDDUITableViewDemoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BDB35DD4087651EB12AEAB1AB1AFA92 /* Pods-FDDUITableViewDemoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FB3531C0CFE69A35834BD66A2FFF3E4 /* BaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 69AC574B639872195C190944969D5EA3 /* BaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35B57AD1DF897ADAE6626B2B64B9CB16 /* PullToRefresher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 114E9128363366E65D0239723C2222E2 /* PullToRefresher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38A45D4FCEE741F9DC54B73A35AAB8FB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E613E003CD7CBC68E6E57F7C971CE9 /* Security.framework */; };
+		420F1AA87B16FA1B1EC905CB718FD241 /* Pods-FDDUITableViewDemoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E575458168A90DBD629733352AEF01 /* Pods-FDDUITableViewDemoSwift-dummy.m */; };
+		43E8564FAEAB4CE55674C46AEEECB641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B88E50D3853C707F48FB7E06674B59F /* Foundation.framework */; };
+		5E77A906F16DD08CA5A8DA0172D8F3CC /* PullToRefresher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 861B77318A0CB16C3040786C864269DF /* PullToRefresher-dummy.m */; };
+		71D09E86D367314D4E960931F43F13E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B88E50D3853C707F48FB7E06674B59F /* Foundation.framework */; };
+		7881350DB8C7D6A3DC271086C03FBEEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19472FD0C61E124D154587109873865D /* UIKit.framework */; };
+		79701905EA7F9C97A56FF48704F5789F /* FDDCustomerCommon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04180746BDD18B7FD2E5AFAD2F92DBA5 /* FDDCustomerCommon-dummy.m */; };
+		8CBD84536F163B7324053ACACF27C10B /* DefaultRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F95C45631DC293685F79FAB102D6405 /* DefaultRefreshView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A46254B81B79AA603CC77B1896DF38A6 /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4985BF88A51DD8A89A1E87A83932D /* UIScrollView+PullToRefresh.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B11EEE7A186EEE19627447493948D4E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B88E50D3853C707F48FB7E06674B59F /* Foundation.framework */; };
+		B55243B92BC2C5BAE98001AD799DE81B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE31DCB7E5B2E17D27BC06929CE1065 /* BaseViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE4CE716F5A1E1A1FFFBA8FA5C812D41 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1ABB95FF76B019752CEE8A4650099 /* PullToRefresh.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C2F48844DA3785641FB556B03554AD4D /* RefreshViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D165D65FC4B7305CA599E07B3A590A45 /* RefreshViewAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D62EEE5FBDDE3C5A37E74E63CBB31851 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F967A9C5DCF729554329CDBCFBAF7 /* State.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FE9D8679D7A9621B5A21776F81A938F7 /* FDDCustomerCommon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D83013DE123F1E43B9028A3A6C93D97B /* FDDCustomerCommon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6E07A21205E4E193354F7B6773C3AADE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DCFAC96FB7AB089073E9BDFBB30A33C;
+			remoteInfo = FDDCustomerCommon;
+		};
+		7F751DC13502F6B06EAACE8BFBAC2C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD02A68A4693E1D5EADAC04D5EC1D1D6;
+			remoteInfo = PullToRefresher;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		04180746BDD18B7FD2E5AFAD2F92DBA5 /* FDDCustomerCommon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FDDCustomerCommon-dummy.m"; sourceTree = "<group>"; };
+		0B88E50D3853C707F48FB7E06674B59F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		114E9128363366E65D0239723C2222E2 /* PullToRefresher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PullToRefresher-umbrella.h"; sourceTree = "<group>"; };
+		131713D0CE3198AED2DD2EA56A7883E4 /* FDDCustomerCommon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDDCustomerCommon-prefix.pch"; sourceTree = "<group>"; };
+		19472FD0C61E124D154587109873865D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1B9C130601C0F12EE76A73E1FBBCA4D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D60D59B99504C56FBDD452CB19DAF12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24610136A1589EF492C34743A0FCFEF7 /* FDDCustomerCommon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FDDCustomerCommon.modulemap; sourceTree = "<group>"; };
 		290E898CBEFCA765DCB20EB574EA56B3 /* Pods-FDDUITableViewDemoSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FDDUITableViewDemoSwift-acknowledgements.plist"; sourceTree = "<group>"; };
 		37E575458168A90DBD629733352AEF01 /* Pods-FDDUITableViewDemoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FDDUITableViewDemoSwift-dummy.m"; sourceTree = "<group>"; };
 		3A33D6CF84C8C9B8B3CC0CDDC04FE399 /* Pods-FDDUITableViewDemoSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FDDUITableViewDemoSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3B44E3B56D8C4869499035FC7A4D010C /* DefaultViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultViewAnimator.swift; path = PullToRefresh/DefaultViewAnimator.swift; sourceTree = "<group>"; };
 		40D5F6DB7DE6C712B8530325DA664BFF /* Pods-FDDUITableViewDemoSwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FDDUITableViewDemoSwift-frameworks.sh"; sourceTree = "<group>"; };
+		4CD7BBA6E09DE930DF09BA3B4C26BA6F /* PullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PullToRefresh.framework; path = PullToRefresher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C49900ABAE63F0260187DD4BB1C033B /* Pods-FDDUITableViewDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FDDUITableViewDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
+		5FA1ABB95FF76B019752CEE8A4650099 /* PullToRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PullToRefresh.swift; path = PullToRefresh/PullToRefresh.swift; sourceTree = "<group>"; };
 		609E9B8FC2E7F5B5CBB1D38E237FDDE3 /* Pods-FDDUITableViewDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FDDUITableViewDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		6180566B076C4BAFE03EAC433A483F0B /* FDDCustomerCommon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDDCustomerCommon.xcconfig; sourceTree = "<group>"; };
 		65DD0D0688A603216F13283B4D641FFB /* Pods-FDDUITableViewDemoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FDDUITableViewDemoSwift.modulemap"; sourceTree = "<group>"; };
+		69AC574B639872195C190944969D5EA3 /* BaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = FDDCustomerCommon/BaseViewController/BaseViewController.h; sourceTree = "<group>"; };
 		7BDB35DD4087651EB12AEAB1AB1AFA92 /* Pods-FDDUITableViewDemoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FDDUITableViewDemoSwift-umbrella.h"; sourceTree = "<group>"; };
+		7F26A927246D26B1704601A6F668EF82 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		861B77318A0CB16C3040786C864269DF /* PullToRefresher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PullToRefresher-dummy.m"; sourceTree = "<group>"; };
+		8F6DC6D63D7791387B4BEAC36B272EA0 /* PullToRefresher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PullToRefresher.xcconfig; sourceTree = "<group>"; };
+		8F95C45631DC293685F79FAB102D6405 /* DefaultRefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultRefreshView.swift; path = PullToRefresh/DefaultRefreshView.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ABE31DCB7E5B2E17D27BC06929CE1065 /* BaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = FDDCustomerCommon/BaseViewController/BaseViewController.m; sourceTree = "<group>"; };
+		B1B2F628138D3FFB0B43264EDD0CFF59 /* PullToRefresher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PullToRefresher.modulemap; sourceTree = "<group>"; };
+		B2476A74E987EE1D0F0A8FF34B4B6212 /* PullToRefresher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PullToRefresher-prefix.pch"; sourceTree = "<group>"; };
 		BA9567191AF8C59571167FD3F8885261 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C0E613E003CD7CBC68E6E57F7C971CE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		D04489E7B1BEDB08A0FCDAAD4A10838E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		D165D65FC4B7305CA599E07B3A590A45 /* RefreshViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RefreshViewAnimator.swift; path = PullToRefresh/RefreshViewAnimator.swift; sourceTree = "<group>"; };
+		D67A74E6828C1A0A7793E05C4C721A4B /* Pods_FDDUITableViewDemoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FDDUITableViewDemoSwift.framework; path = "Pods-FDDUITableViewDemoSwift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83013DE123F1E43B9028A3A6C93D97B /* FDDCustomerCommon-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDDCustomerCommon-umbrella.h"; sourceTree = "<group>"; };
+		DAB458BE8D21218402889A4927792208 /* FDDCustomerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FDDCustomerCommon.framework; path = FDDCustomerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB4985BF88A51DD8A89A1E87A83932D /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+PullToRefresh.swift"; path = "PullToRefresh/UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		E84722155B0D476C22140E29699DD9CC /* Pods-FDDUITableViewDemoSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FDDUITableViewDemoSwift-resources.sh"; sourceTree = "<group>"; };
-		FE3D4CC693245A33107A12896FEF4605 /* Pods_FDDUITableViewDemoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FDDUITableViewDemoSwift.framework; path = "Pods-FDDUITableViewDemoSwift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86F967A9C5DCF729554329CDBCFBAF7 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = PullToRefresh/State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C815C280D6302568D1C66A511638EDC2 /* Frameworks */ = {
+		6C6690D7D590E796ECA638AEAB02280A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CA8E25239886D26CE15A56AED8C1BA2 /* Foundation.framework in Frameworks */,
+				049B6A0B80A5E172C94007EF95B776BE /* AdSupport.framework in Frameworks */,
+				1C34296E630B7F80803F97498233F878 /* CoreTelephony.framework in Frameworks */,
+				43E8564FAEAB4CE55674C46AEEECB641 /* Foundation.framework in Frameworks */,
+				38A45D4FCEE741F9DC54B73A35AAB8FB /* Security.framework in Frameworks */,
+				7881350DB8C7D6A3DC271086C03FBEEA /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C89CD18F37C087ACB399D567EBF30C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D09E86D367314D4E960931F43F13E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8F02AEA710D2AB7D32BE7995AFAE078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B11EEE7A186EEE19627447493948D4E0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14A4998ABED5DF40629D5C34055A0B40 /* Products */ = {
+		022A5175BED25EDB56DB24CE1F9200BF /* PullToRefresher */ = {
 			isa = PBXGroup;
 			children = (
-				FE3D4CC693245A33107A12896FEF4605 /* Pods_FDDUITableViewDemoSwift.framework */,
+				8F95C45631DC293685F79FAB102D6405 /* DefaultRefreshView.swift */,
+				3B44E3B56D8C4869499035FC7A4D010C /* DefaultViewAnimator.swift */,
+				5FA1ABB95FF76B019752CEE8A4650099 /* PullToRefresh.swift */,
+				D165D65FC4B7305CA599E07B3A590A45 /* RefreshViewAnimator.swift */,
+				F86F967A9C5DCF729554329CDBCFBAF7 /* State.swift */,
+				DCB4985BF88A51DD8A89A1E87A83932D /* UIScrollView+PullToRefresh.swift */,
+				ED047D6A0EF21D8BFDD8D0F41D5E8C83 /* Support Files */,
 			);
-			name = Products;
+			name = PullToRefresher;
+			path = PullToRefresher;
 			sourceTree = "<group>";
 		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+		070E17954019EC9C879DA8892AD8A011 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+				69AC574B639872195C190944969D5EA3 /* BaseViewController.h */,
+				ABE31DCB7E5B2E17D27BC06929CE1065 /* BaseViewController.m */,
 			);
-			name = iOS;
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6AFE8281811CC7A946D5B3143468C46 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B720BCD1B960AF5775453460816CF21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAB458BE8D21218402889A4927792208 /* FDDCustomerCommon.framework */,
+				D67A74E6828C1A0A7793E05C4C721A4B /* Pods_FDDUITableViewDemoSwift.framework */,
+				4CD7BBA6E09DE930DF09BA3B4C26BA6F /* PullToRefresh.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7CCDDDF2B723E9F93E771380ED156986 /* Targets Support Files */ = {
@@ -68,8 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				14A4998ABED5DF40629D5C34055A0B40 /* Products */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				BF00D71D66288412FAA6AEC879B95E6F /* Pods */,
+				7B720BCD1B960AF5775453460816CF21 /* Products */,
 				7CCDDDF2B723E9F93E771380ED156986 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -92,43 +200,147 @@
 			path = "Target Support Files/Pods-FDDUITableViewDemoSwift";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		BF00D71D66288412FAA6AEC879B95E6F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				FA1F34395512A204827DD21014FF71D9 /* FDDCustomerCommon */,
+				022A5175BED25EDB56DB24CE1F9200BF /* PullToRefresher */,
 			);
-			name = Frameworks;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6AFE8281811CC7A946D5B3143468C46 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D04489E7B1BEDB08A0FCDAAD4A10838E /* AdSupport.framework */,
+				7F26A927246D26B1704601A6F668EF82 /* CoreTelephony.framework */,
+				0B88E50D3853C707F48FB7E06674B59F /* Foundation.framework */,
+				C0E613E003CD7CBC68E6E57F7C971CE9 /* Security.framework */,
+				19472FD0C61E124D154587109873865D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E87679EDDB09E539DAF0095D262608E9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				24610136A1589EF492C34743A0FCFEF7 /* FDDCustomerCommon.modulemap */,
+				6180566B076C4BAFE03EAC433A483F0B /* FDDCustomerCommon.xcconfig */,
+				04180746BDD18B7FD2E5AFAD2F92DBA5 /* FDDCustomerCommon-dummy.m */,
+				131713D0CE3198AED2DD2EA56A7883E4 /* FDDCustomerCommon-prefix.pch */,
+				D83013DE123F1E43B9028A3A6C93D97B /* FDDCustomerCommon-umbrella.h */,
+				1D60D59B99504C56FBDD452CB19DAF12 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FDDCustomerCommon";
+			sourceTree = "<group>";
+		};
+		ED047D6A0EF21D8BFDD8D0F41D5E8C83 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B9C130601C0F12EE76A73E1FBBCA4D8 /* Info.plist */,
+				B1B2F628138D3FFB0B43264EDD0CFF59 /* PullToRefresher.modulemap */,
+				8F6DC6D63D7791387B4BEAC36B272EA0 /* PullToRefresher.xcconfig */,
+				861B77318A0CB16C3040786C864269DF /* PullToRefresher-dummy.m */,
+				B2476A74E987EE1D0F0A8FF34B4B6212 /* PullToRefresher-prefix.pch */,
+				114E9128363366E65D0239723C2222E2 /* PullToRefresher-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PullToRefresher";
+			sourceTree = "<group>";
+		};
+		FA1F34395512A204827DD21014FF71D9 /* FDDCustomerCommon */ = {
+			isa = PBXGroup;
+			children = (
+				070E17954019EC9C879DA8892AD8A011 /* BaseViewController */,
+				E87679EDDB09E539DAF0095D262608E9 /* Support Files */,
+			);
+			name = FDDCustomerCommon;
+			path = FDDCustomerCommon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F9FF2C96E4EEA649DE5FBA7C04899105 /* Headers */ = {
+		036BF5E946977EE5F874795E7BD2BE3D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				617E2FFE49FE889FC61E62FB51CC5A5D /* Pods-FDDUITableViewDemoSwift-umbrella.h in Headers */,
+				2FB3531C0CFE69A35834BD66A2FFF3E4 /* BaseViewController.h in Headers */,
+				FE9D8679D7A9621B5A21776F81A938F7 /* FDDCustomerCommon-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8430C55A7A793874D4A8179EF57EA0FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B57AD1DF897ADAE6626B2B64B9CB16 /* PullToRefresher-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A86F363FFDB29EB60F63010E7AC39D56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2285AE7369E646E0AB85C967BD7370B4 /* Pods-FDDUITableViewDemoSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		26B32FEA1923F3878169CFA3984763A7 /* Pods-FDDUITableViewDemoSwift */ = {
+		0DCFAC96FB7AB089073E9BDFBB30A33C /* FDDCustomerCommon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 288DAE6B507AFEFF07736A20E90DB60A /* Build configuration list for PBXNativeTarget "Pods-FDDUITableViewDemoSwift" */;
+			buildConfigurationList = 74EDA6D402F1B3FECE328EBD981FB4F7 /* Build configuration list for PBXNativeTarget "FDDCustomerCommon" */;
 			buildPhases = (
-				DF7FEB40B02B8CC96DAF760052087E83 /* Sources */,
-				C815C280D6302568D1C66A511638EDC2 /* Frameworks */,
-				F9FF2C96E4EEA649DE5FBA7C04899105 /* Headers */,
+				9EBD797817C7820AE1963820D4ED534F /* Sources */,
+				6C6690D7D590E796ECA638AEAB02280A /* Frameworks */,
+				036BF5E946977EE5F874795E7BD2BE3D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = FDDCustomerCommon;
+			productName = FDDCustomerCommon;
+			productReference = DAB458BE8D21218402889A4927792208 /* FDDCustomerCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C1E3C968C87DED25B62C1BB6435EAC76 /* Pods-FDDUITableViewDemoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39B22CF49C10179623B2B3CFFC7BA199 /* Build configuration list for PBXNativeTarget "Pods-FDDUITableViewDemoSwift" */;
+			buildPhases = (
+				6BBA72742A45CB28C08717C57C761F6B /* Sources */,
+				C3C89CD18F37C087ACB399D567EBF30C /* Frameworks */,
+				A86F363FFDB29EB60F63010E7AC39D56 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F1AF6CC8FF31F17BBBA0BF1158C5314 /* PBXTargetDependency */,
+				13C7E040D175592B579725F1EB2B19BB /* PBXTargetDependency */,
+			);
 			name = "Pods-FDDUITableViewDemoSwift";
 			productName = "Pods-FDDUITableViewDemoSwift";
-			productReference = FE3D4CC693245A33107A12896FEF4605 /* Pods_FDDUITableViewDemoSwift.framework */;
+			productReference = D67A74E6828C1A0A7793E05C4C721A4B /* Pods_FDDUITableViewDemoSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CD02A68A4693E1D5EADAC04D5EC1D1D6 /* PullToRefresher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1376AAA867B99EED94F135B2EBA891B /* Build configuration list for PBXNativeTarget "PullToRefresher" */;
+			buildPhases = (
+				43D001752858252444F1D771735B41A9 /* Sources */,
+				C8F02AEA710D2AB7D32BE7995AFAE078 /* Frameworks */,
+				8430C55A7A793874D4A8179EF57EA0FF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PullToRefresher;
+			productName = PullToRefresher;
+			productReference = 4CD7BBA6E09DE930DF09BA3B4C26BA6F /* PullToRefresh.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -148,25 +360,65 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 14A4998ABED5DF40629D5C34055A0B40 /* Products */;
+			productRefGroup = 7B720BCD1B960AF5775453460816CF21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26B32FEA1923F3878169CFA3984763A7 /* Pods-FDDUITableViewDemoSwift */,
+				0DCFAC96FB7AB089073E9BDFBB30A33C /* FDDCustomerCommon */,
+				C1E3C968C87DED25B62C1BB6435EAC76 /* Pods-FDDUITableViewDemoSwift */,
+				CD02A68A4693E1D5EADAC04D5EC1D1D6 /* PullToRefresher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF7FEB40B02B8CC96DAF760052087E83 /* Sources */ = {
+		43D001752858252444F1D771735B41A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				605E7466F194B25F4A23E2953FD79231 /* Pods-FDDUITableViewDemoSwift-dummy.m in Sources */,
+				8CBD84536F163B7324053ACACF27C10B /* DefaultRefreshView.swift in Sources */,
+				17204800CFA341E01280F8945A65889A /* DefaultViewAnimator.swift in Sources */,
+				BE4CE716F5A1E1A1FFFBA8FA5C812D41 /* PullToRefresh.swift in Sources */,
+				5E77A906F16DD08CA5A8DA0172D8F3CC /* PullToRefresher-dummy.m in Sources */,
+				C2F48844DA3785641FB556B03554AD4D /* RefreshViewAnimator.swift in Sources */,
+				D62EEE5FBDDE3C5A37E74E63CBB31851 /* State.swift in Sources */,
+				A46254B81B79AA603CC77B1896DF38A6 /* UIScrollView+PullToRefresh.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BBA72742A45CB28C08717C57C761F6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				420F1AA87B16FA1B1EC905CB718FD241 /* Pods-FDDUITableViewDemoSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBD797817C7820AE1963820D4ED534F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55243B92BC2C5BAE98001AD799DE81B /* BaseViewController.m in Sources */,
+				79701905EA7F9C97A56FF48704F5789F /* FDDCustomerCommon-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13C7E040D175592B579725F1EB2B19BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PullToRefresher;
+			target = CD02A68A4693E1D5EADAC04D5EC1D1D6 /* PullToRefresher */;
+			targetProxy = 7F751DC13502F6B06EAACE8BFBAC2C01 /* PBXContainerItemProxy */;
+		};
+		9F1AF6CC8FF31F17BBBA0BF1158C5314 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FDDCustomerCommon;
+			target = 0DCFAC96FB7AB089073E9BDFBB30A33C /* FDDCustomerCommon */;
+			targetProxy = 6E07A21205E4E193354F7B6773C3AADE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
@@ -213,41 +465,6 @@
 			};
 			name = Debug;
 		};
-		3A28B97776802E1903D1030CEF0B0FED /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C49900ABAE63F0260187DD4BB1C033B /* Pods-FDDUITableViewDemoSwift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FDDUITableViewDemoSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FDDUITableViewDemoSwift/Pods-FDDUITableViewDemoSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FDDUITableViewDemoSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -288,7 +505,107 @@
 			};
 			name = Release;
 		};
-		E108AE244A2D58105B20212E7D9F2FE5 /* Debug */ = {
+		719185013F67F5BDBCEABD801C11709D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6180566B076C4BAFE03EAC433A483F0B /* FDDCustomerCommon.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FDDCustomerCommon/FDDCustomerCommon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FDDCustomerCommon/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FDDCustomerCommon/FDDCustomerCommon.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FDDCustomerCommon;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7BA433C592D111D95AA8F304079C29AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C49900ABAE63F0260187DD4BB1C033B /* Pods-FDDUITableViewDemoSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FDDUITableViewDemoSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FDDUITableViewDemoSwift/Pods-FDDUITableViewDemoSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FDDUITableViewDemoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E9F1A4716D9D8D06631A9C7D55279C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F6DC6D63D7791387B4BEAC36B272EA0 /* PullToRefresher.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PullToRefresher/PullToRefresher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PullToRefresher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PullToRefresher/PullToRefresher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PullToRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1782F9169573BB748A51F2A60F81E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 609E9B8FC2E7F5B5CBB1D38E237FDDE3 /* Pods-FDDUITableViewDemoSwift.debug.xcconfig */;
 			buildSettings = {
@@ -317,29 +634,112 @@
 				PRODUCT_NAME = Pods_FDDUITableViewDemoSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+		A6E334CAD44B06489D7CBFEFCA30436A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6180566B076C4BAFE03EAC433A483F0B /* FDDCustomerCommon.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FDDCustomerCommon/FDDCustomerCommon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FDDCustomerCommon/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FDDCustomerCommon/FDDCustomerCommon.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FDDCustomerCommon;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE9FF310D013ED12E1CBECAC81523813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F6DC6D63D7791387B4BEAC36B272EA0 /* PullToRefresher.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PullToRefresher/PullToRefresher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PullToRefresher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PullToRefresher/PullToRefresher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PullToRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		288DAE6B507AFEFF07736A20E90DB60A /* Build configuration list for PBXNativeTarget "Pods-FDDUITableViewDemoSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E108AE244A2D58105B20212E7D9F2FE5 /* Debug */,
-				3A28B97776802E1903D1030CEF0B0FED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
 				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39B22CF49C10179623B2B3CFFC7BA199 /* Build configuration list for PBXNativeTarget "Pods-FDDUITableViewDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1782F9169573BB748A51F2A60F81E0A /* Debug */,
+				7BA433C592D111D95AA8F304079C29AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74EDA6D402F1B3FECE328EBD981FB4F7 /* Build configuration list for PBXNativeTarget "FDDCustomerCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				719185013F67F5BDBCEABD801C11709D /* Debug */,
+				A6E334CAD44B06489D7CBFEFCA30436A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1376AAA867B99EED94F135B2EBA891B /* Build configuration list for PBXNativeTarget "PullToRefresher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E9F1A4716D9D8D06631A9C7D55279C4 /* Debug */,
+				BE9FF310D013ED12E1CBECAC81523813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

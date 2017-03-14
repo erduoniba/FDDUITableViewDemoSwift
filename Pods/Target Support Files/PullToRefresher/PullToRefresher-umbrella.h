@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_FDDUITableViewDemoSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FDDUITableViewDemoSwiftVersionString[];
+FOUNDATION_EXPORT double PullToRefreshVersionNumber;
+FOUNDATION_EXPORT const unsigned char PullToRefreshVersionString[];
 

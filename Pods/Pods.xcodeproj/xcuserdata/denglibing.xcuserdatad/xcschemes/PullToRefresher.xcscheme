@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C1E3C968C87DED25B62C1BB6435EAC76"
-               BuildableName = "Pods_FDDUITableViewDemoSwift.framework"
-               BlueprintName = "Pods-FDDUITableViewDemoSwift"
+               BlueprintIdentifier = "CD02A68A4693E1D5EADAC04D5EC1D1D6"
+               BuildableName = "PullToRefresh.framework"
+               BlueprintName = "PullToRefresher"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C1E3C968C87DED25B62C1BB6435EAC76"
-            BuildableName = "Pods_FDDUITableViewDemoSwift.framework"
-            BlueprintName = "Pods-FDDUITableViewDemoSwift"
+            BlueprintIdentifier = "CD02A68A4693E1D5EADAC04D5EC1D1D6"
+            BuildableName = "PullToRefresh.framework"
+            BlueprintName = "PullToRefresher"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

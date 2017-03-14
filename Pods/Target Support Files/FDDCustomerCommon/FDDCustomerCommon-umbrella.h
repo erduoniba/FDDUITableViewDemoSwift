@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "BaseViewController.h"
 
-FOUNDATION_EXPORT double Pods_FDDUITableViewDemoSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FDDUITableViewDemoSwiftVersionString[];
+FOUNDATION_EXPORT double FDDCustomerCommonVersionNumber;
+FOUNDATION_EXPORT const unsigned char FDDCustomerCommonVersionString[];
 

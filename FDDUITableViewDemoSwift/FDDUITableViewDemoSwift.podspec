@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'FDDBaseRepo' do |ss|
         ss.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
+        s.dependency 'PullToRefresher'   
     end
 
    # s.subspec 'KTJPushQueueForNavigation' do |pqn|

@@ -9,13 +9,11 @@
 import UIKit
 
 /// 使用重载方式统一处理 UITableViewDataSource和UITableViewDelegate， 特殊的方法使用重载模式处理
-class ViewController2: FDDBaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController2: FDDBaseTableViewController, UITableViewDelegate, UITableViewDataSource {
     
     deinit {
         print(NSStringFromClass(ViewController2.self) + " dealloc")
     }
-    
-    var tableViewConverter : FDDTableViewConverter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +40,8 @@ class ViewController2: FDDBaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func disposeTableViewConverter() {
-        tableViewConverter = FDDTableViewConverter.init(withTableViewCarrier: self, dataSources: self.dataArr)
-        
-        let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        self.view.addSubview(tableView)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +62,7 @@ class ViewController2: FDDBaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ViewController(), animated: true)
+        self.navigationController?.pushViewController(ViewController(tableViewStyle: .plain), animated: true)
     }
 
 

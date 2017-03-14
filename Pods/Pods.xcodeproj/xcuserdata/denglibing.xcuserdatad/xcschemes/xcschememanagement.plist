@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FDDCustomerCommon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FDDUITableViewDemoSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PullToRefresher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -12,7 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26B32FEA1923F3878169CFA3984763A7</key>
+		<key>0DCFAC96FB7AB089073E9BDFBB30A33C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1E3C968C87DED25B62C1BB6435EAC76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD02A68A4693E1D5EADAC04D5EC1D1D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

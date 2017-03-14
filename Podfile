@@ -8,7 +8,8 @@ inhibit_all_warnings!
 
 target 'FDDUITableViewDemoSwift' do
 
-#pod 'HDBaseProject'
+pod 'PullToRefresher'
+pod 'FDDCustomerCommon/BaseViewController', :git => 'ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common'
 #pod 'OceanstackSDK', git: 'ssh://teamcode/fangdd/agent/agent-oceanstack-sdk-ios'
 #pod 'FeedBackIOS', git: 'ssh://teamcode/fangdd/engineering/common/utils/fdd-common-ios/feedback'
 #pod 'NewHouseSDK', git: 'ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-sdk'

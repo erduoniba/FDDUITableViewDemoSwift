@@ -25,7 +25,7 @@ extension UITableView {
 
 
 // 通过重载来实现特殊的cell
-extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
+extension FDDBaseTableViewController: FDDBaseTableViewCellDelegate {
     
     @objc(tableView:numberOfRowsInSection:) func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
@@ -54,7 +54,6 @@ extension FDDBaseViewController: FDDBaseTableViewCellDelegate {
 
 
 
-
 typealias fddTableViewConterterBlock = (_ params: Array<Any>) -> AnyObject?
 
 // 通过转换类来处理通用的tableView方法，特殊需要自己处理的使用 registerTableViewMethod 方式处理
@@ -65,7 +64,7 @@ class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     private var selectorBlocks = NSMutableDictionary()
-    private var dataArr = NSMutableArray()
+    var dataArr = NSMutableArray()
     weak var tableViewCarrier: AnyObject?
     
     convenience init(withTableViewCarrier tableViewCarrier: AnyObject, dataSources: NSMutableArray) {

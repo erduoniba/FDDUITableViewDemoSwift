@@ -1,0 +1,104 @@
+{
+  "name": "FDDCustomerCommon",
+  "version": "0.0.7",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "homepage": "http://www.fangdd.com/shanghai",
+  "authors": {
+    "sunjigang": "sunjigang@fangdd.com"
+  },
+  "summary": "FDDCustomerCommon",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "ssh://teamcode/fangdd/customer/fdd-app-ios-common",
+    "tag": "0.0.7"
+  },
+  "module_name": "FDDCustomerCommon",
+  "frameworks": [
+    "UIKit",
+    "AdSupport",
+    "Security",
+    "CoreTelephony"
+  ],
+  "libraries": [
+    "sqlite3",
+    "z"
+  ],
+  "requires_arc": true,
+  "prefix_header_contents": "#import \"FDDCustomerCommon_pch.h\"",
+  "vendored_frameworks": "FDDCustomerCommon/FDDMobClick/UMMobClick.framework",
+  "vendored_libraries": [
+    "FDDCustomerCommon/audioEncode/include/opencore-amrnb/libopencore-amrnb.a",
+    "FDDCustomerCommon/audioEncode/include/opencore-amrwb/libopencore-amrwb.a"
+  ],
+  "user_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
+  "subspecs": [
+    {
+      "name": "BaseViewController",
+      "source_files": "FDDCustomerCommon/BaseViewController/*"
+    },
+    {
+      "name": "KTJPushQueueForNavigation",
+      "source_files": "FDDCustomerCommon/KTJPushQueueForNavigation/*"
+    },
+    {
+      "name": "ChatViewController",
+      "source_files": "FDDCustomerCommon/FDDChatViewController/*",
+      "dependencies": {
+        "IMIOSSDK": [
+
+        ]
+      }
+    },
+    {
+      "name": "DNImagePicker",
+      "source_files": "FDDCustomerCommon/DNImagePicker/*",
+      "dependencies": {
+        "Masonry": [
+
+        ]
+      }
+    },
+    {
+      "name": "FDDWebViewJavascriptBridge",
+      "source_files": "FDDCustomerCommon/WebViewJavascriptBridge/*"
+    },
+    {
+      "name": "FDDCommon",
+      "source_files": "FDDCustomerCommon/common/*",
+      "dependencies": {
+        "AFNetworking": [
+
+        ],
+        "IMIOSSDK": [
+
+        ]
+      }
+    },
+    {
+      "name": "audioEncode",
+      "source_files": "FDDCustomerCommon/audioEncode/**/*"
+    },
+    {
+      "name": "FDDMobClick",
+      "source_files": [
+        "FDDCustomerCommon/FDDMobClick/*",
+        "FDDCustomerCommon/FDDMobClick/Headers/*"
+      ],
+      "dependencies": {
+        "FddLogRecordSdk": [
+
+        ]
+      }
+    }
+  ]
+}
