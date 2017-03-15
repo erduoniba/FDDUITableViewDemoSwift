@@ -16,7 +16,7 @@ open class FDDBaseTableViewController: UIViewController {
     open var tableViewConverter: FDDTableViewConverter!
     var tableViewStyle: UITableViewStyle = .plain
     
-    open var pageIndex: Int = 0
+    open var pageIndex: Int = 1
     open var pageSize: Int = 20
     
     fileprivate var haveTopRefresh: Bool = false
