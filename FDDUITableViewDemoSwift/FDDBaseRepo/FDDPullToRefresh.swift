@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 import PullToRefresh
 
+// 使用教程 https://yalantis.com/blog/how-we-built-customizable-pull-to-refresh-pull-to-cook-soup-animation/
 public class FDDPullToRefresh: PullToRefresh {
     convenience init(at position: Position) {
         let refreshView = FDDPullToRefreshView()
