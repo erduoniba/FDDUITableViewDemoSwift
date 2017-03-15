@@ -176,7 +176,6 @@ open class FDDBaseTableViewCell: UITableViewCell {
     private func setup() {
         self.selectionStyle = .none
         
-        self.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1)
         self.contentView.addSubview(self.topLineView)
         self.contentView.addSubview(self.bottomLineView)
     }

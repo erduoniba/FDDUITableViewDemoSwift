@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'FDDUITableViewDemoSwift'
-    s.version      = "0.1.0"
+    s.version      = "0.1.1"
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.author       = { 'denglibing' => 'denglibing@fangdd.com' }
     s.summary      = 'FDDUITableViewDemoSwift'
@@ -19,16 +19,5 @@ Pod::Spec.new do |s|
         ss.source_files = 'FDDUITableViewDemoSwift/FDDBaseRepo/*'
         ss.resources = ["FDDUITableViewDemoSwift/FDDBaseRepo/Resources/*"]
         ss.dependency 'PullToRefresher'
-    #   ss.dependency 'FDDCustomerCommon/BaseViewController/BaseViewController.*', :git => 'ssh://teamcode.fangdd.net:29418/fangdd/customer/fdd-app-ios-common'
     end
-
-   # s.subspec 'KTJPushQueueForNavigation' do |pqn|
-   #     pqn.source_files = 'FDDCustomerCommon/KTJPushQueueForNavigation/*'
-   # end
-
-   # s.subspec 'ChatViewController' do |cvc|
-   #     cvc.source_files = 'FDDCustomerCommon/FDDChatViewController/*'
-   #     cvc.dependency 'IMIOSSDK'
-   # end
-
 end
