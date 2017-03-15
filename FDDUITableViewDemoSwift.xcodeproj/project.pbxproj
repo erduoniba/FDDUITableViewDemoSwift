@@ -45,7 +45,7 @@
 		D903486A1E541D6300C9F626 /* FDDBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDBaseTableViewController.swift; sourceTree = "<group>"; };
 		D90348811E5596A400C9F626 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D98FBB891E76A3DB008EDDC1 /* FDDPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDDPullToRefresh.swift; sourceTree = "<group>"; };
-		D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FDDUITableViewDemoSwift.podspec; sourceTree = SOURCE_ROOT; };
+		D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; lineEnding = 0; path = FDDUITableViewDemoSwift.podspec; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		D98FBBE71E77D278008EDDC1 /* fdd_logo_refresh_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fdd_logo_refresh_circle@2x.png"; sourceTree = "<group>"; };
 		D98FBBE81E77D278008EDDC1 /* fdd_logo_refresh_circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fdd_logo_refresh_circle@3x.png"; sourceTree = "<group>"; };
 		D98FBBEB1E77D282008EDDC1 /* fdd_logo_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fdd_logo_refresh@2x.png"; sourceTree = "<group>"; };
