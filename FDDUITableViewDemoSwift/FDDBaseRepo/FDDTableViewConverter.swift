@@ -46,7 +46,7 @@ extension FDDBaseTableViewController{
     }
     
     // MARK: - FDDBaseTableViewCellDelegate
-    public func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
+    open func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
         if cell.isMember(of: FDDBaseTableViewCell.self) {
             print("FDDBaseTableViewCell的代理")
         }
