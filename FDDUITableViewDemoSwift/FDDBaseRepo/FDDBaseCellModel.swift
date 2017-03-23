@@ -10,11 +10,11 @@
 import UIKit
 
 open class FDDBaseCellModel: NSObject {
-    var cellData:   AnyObject?
-    var cellClass:  AnyClass?
-    var delegate:   AnyObject?
-    var cellHeight: Float = 44
-    var staticCell: UITableViewCell?
+    open var cellData:   AnyObject?
+    open var cellClass:  AnyClass?
+    open var delegate:   AnyObject?
+    open var cellHeight: Float = 44
+    open var staticCell: UITableViewCell?
     
     override init() {
         super.init()
