@@ -4,6 +4,7 @@
 //
 //  Created by denglibing on 2017/3/13.
 //  Copyright © 2017年 Yalantis. All rights reserved.
+//  Demo: https://github.com/erduoniba/FDDUITableViewDemoSwift
 //
 
 import UIKit
@@ -13,7 +14,7 @@ import PullToRefresh
 // 使用教程 https://yalantis.com/blog/how-we-built-customizable-pull-to-refresh-pull-to-cook-soup-animation/
 public class FDDPullToRefresh: PullToRefresh {
     convenience init(at position: Position) {
-        let refreshView = FDDPullToRefreshView()
+        let refreshView = FDDPullToRefreshView(at: position)
         let animator = FDDPullToRefreshAnimator(refreshView: refreshView)
         self.init(refreshView: refreshView, animator: animator, height:refreshView.frame.size.height, position: position)
 
@@ -30,9 +31,12 @@ public class FDDPullToRefreshView: UIView {
     var fddIcon = UIImageView()
     var fddCircle = UIImageView()
     var fddState = UILabel()
+    var fddPostion = Position.top
 
-    convenience init() {
+    convenience init(at position: Position) {
         self.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+
+        fddPostion = position
 
         fddCircle.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         fddCircle.image = UIImage(named: "fdd_logo_refresh_circle", in: Bundle(for: FDDPullToRefreshView.self), compatibleWith: nil)
@@ -52,9 +56,17 @@ public class FDDPullToRefreshView: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        fddIcon.center = CGPoint(x: self.frame.size.width / 2 - 42, y: self.frame.size.height / 2)
-        fddCircle.center = fddIcon.center
-        fddState.frame = CGRect(x: self.frame.size.width / 2 - 10, y: (self.frame.size.height - 20) / 2.0, width: 100, height: 20)
+        if fddPostion == .top {
+            fddIcon.center = CGPoint(x: self.frame.size.width / 2 - 42, y: self.frame.size.height / 2)
+            fddCircle.center = fddIcon.center
+            fddState.frame = CGRect(x: self.frame.size.width / 2 - 10, y: (self.frame.size.height - 20) / 2.0, width: 100, height: 20)
+            fddState.isHidden = false
+        }
+        else if fddPostion == .bottom {
+            fddIcon.center = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
+            fddCircle.center = fddIcon.center
+            fddState.isHidden = true
+        }
     }
 
     public func startAnimation() {

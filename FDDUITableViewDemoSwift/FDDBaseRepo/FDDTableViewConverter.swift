@@ -4,6 +4,7 @@
 //
 //  Created by denglibing on 2017/2/10.
 //  Copyright © 2017年 denglibing. All rights reserved.
+//  Demo: https://github.com/erduoniba/FDDUITableViewDemoSwift
 //
 
 import UIKit
@@ -25,7 +26,7 @@ extension UITableView {
 
 
 // 通过重载来实现特殊的cell
-extension FDDBaseTableViewController: FDDBaseTableViewCellDelegate {
+extension FDDBaseTableViewController{
     
     @objc(tableView:numberOfRowsInSection:) func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count

@@ -23,8 +23,8 @@ class ViewController: FDDBaseTableViewController {
         self.disposeDataSources()
         self.disposeTableViewConverter()
         
-        self.addRefreshView()
-        self.addLoadMoreView()
+        self.addRefresgView(at: .top)
+        self.addRefresgView(at: .bottom)
     }
     
     func disposeDataSources () {
@@ -34,7 +34,7 @@ class ViewController: FDDBaseTableViewController {
                              "Welcome to the Swift community. Together we are working to build a better programming language for everyone.",
                              "– The Swift Team"]
         
-        for _ in 0...30 {
+        for _ in 0...10 {
             let randomIndex: Int = Int(arc4random() % 5)
             let cellData: String = randomSources[randomIndex]
             let cellModel = FDDBaseCellModel.modelWithCellClass(HDTableViewCell.self, cellHeight: HDTableViewCell.cellHeight(cellData as AnyObject?, boundWidth: Float(self.view.frame.size.width)), cellData: cellData as AnyObject?)
@@ -77,18 +77,23 @@ class ViewController: FDDBaseTableViewController {
     }
     
     override func requestData() {
-        let delayTime = DispatchTime.now() + Double(Int64(5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
             if self.pageIndex == 0 {
                 self.dataArr.removeAllObjects()
                 self.disposeDataSources()
                 self.tableView.reloadData()
-                self.tableView.endRefreshing(at: .top)
+                self.endRefreshing(at: .top)
+                self.addRefresgView(at: .bottom)
             }
             else {
                 self.disposeDataSources()
                 self.tableView.reloadData()
-                self.tableView.endRefreshing(at: .bottom)
+                self.endRefreshing(at: .bottom)
+
+                if self.dataArr.count > 25 {
+                    self.hideRefreshView(at: .bottom)
+                }
             }
         }
     }

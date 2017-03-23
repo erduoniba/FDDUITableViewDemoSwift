@@ -4,6 +4,7 @@
 //
 //  Created by denglibing on 2017/2/7.
 //  Copyright © 2017年 denglibing. All rights reserved.
+//  Demo: https://github.com/erduoniba/FDDUITableViewDemoSwift
 //
 
 import UIKit
@@ -14,7 +15,7 @@ public protocol FDDBaseTableViewCellDelegate: NSObjectProtocol {
 }
 
 
-enum FDDBaseTableViewCellType {
+public enum FDDBaseTableViewCellType {
     case FDDBaseTableViewCellNone       //上下线都隐藏
     case FDDBaseTableViewCellAtFirst    //下线隐藏,按照group样式即第一个cell,originx=0
     case FDDBaseTableViewCellAtMiddle   //下线隐藏,按照group样式即中间cell,originx=separateLineOffset
@@ -31,31 +32,31 @@ open class FDDBaseTableViewCell: UITableViewCell {
     open var separateLineOffset: CGFloat = 0.0
     var sizeOnePx: CGFloat = 1.0 / UIScreen.main.scale
     
-    var _cellType: FDDBaseTableViewCellType = .FDDBaseTableViewCellNormal
-    var cellType: FDDBaseTableViewCellType {
+    open var _cellType: FDDBaseTableViewCellType = .FDDBaseTableViewCellNormal
+    open var cellType: FDDBaseTableViewCellType {
         get {
             return _cellType
         }
         set {
             _cellType = newValue
-            
+
             switch _cellType {
             case .FDDBaseTableViewCellNone:
                 topLineView.isHidden = true
                 bottomLineView.isHidden = true
                 break
-                
+
             case .FDDBaseTableViewCellAtFirst, .FDDBaseTableViewCellAtMiddle, .FDDBaseTableViewCellNormal:
                 topLineView.isHidden = false
                 bottomLineView.isHidden = true
                 break
-                
+
             case .FDDBaseTableViewCellAtLast, .FDDBaseTableViewCellSingle:
                 topLineView.isHidden = false
                 bottomLineView.isHidden = false
                 break
             }
-            
+
             self.setNeedsLayout()
         }
     }

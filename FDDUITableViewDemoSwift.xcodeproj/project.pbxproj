@@ -13,13 +13,12 @@
 		D903485D1E541CD500C9F626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90348501E541CD500C9F626 /* LaunchScreen.storyboard */; };
 		D903485E1E541CD500C9F626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90348521E541CD500C9F626 /* Main.storyboard */; };
 		D90348631E541CD500C9F626 /* HDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348581E541CD500C9F626 /* HDTableViewCell.swift */; };
-		D90348641E541CD500C9F626 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90348591E541CD500C9F626 /* Info.plist */; };
 		D90348651E541CD500C9F626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903485A1E541CD500C9F626 /* ViewController.swift */; };
 		D903486B1E541D6300C9F626 /* FDDBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348671E541D6300C9F626 /* FDDBaseTableViewCell.swift */; };
 		D903486C1E541D6300C9F626 /* FDDTableViewConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348681E541D6300C9F626 /* FDDTableViewConverter.swift */; };
-		D903486D1E541D6300C9F626 /* FDDBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */; };
 		D903486E1E541D6300C9F626 /* FDDBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903486A1E541D6300C9F626 /* FDDBaseTableViewController.swift */; };
 		D90348821E5596A400C9F626 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D90348811E5596A400C9F626 /* README.md */; };
+		D941AB7F1E82A7410063A114 /* FDDBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90348691E541D6300C9F626 /* FDDBaseCellModel.swift */; };
 		D98FBB8A1E76A3DB008EDDC1 /* FDDPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FBB891E76A3DB008EDDC1 /* FDDPullToRefresh.swift */; };
 		D98FBBA01E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D98FBB9F1E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec */; };
 		D98FBBE91E77D278008EDDC1 /* fdd_logo_refresh_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D98FBBE71E77D278008EDDC1 /* fdd_logo_refresh_circle@2x.png */; };
@@ -215,7 +214,6 @@
 				D98FBBE91E77D278008EDDC1 /* fdd_logo_refresh_circle@2x.png in Resources */,
 				D98FBBA01E77BB8D008EDDC1 /* FDDUITableViewDemoSwift.podspec in Resources */,
 				D903485D1E541CD500C9F626 /* LaunchScreen.storyboard in Resources */,
-				D90348641E541CD500C9F626 /* Info.plist in Resources */,
 				D98FBBED1E77D282008EDDC1 /* fdd_logo_refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,13 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D903485B1E541CD500C9F626 /* AppDelegate.swift in Sources */,
-				D903486D1E541D6300C9F626 /* FDDBaseCellModel.swift in Sources */,
 				D9DA5BB71E5EA5D4000AE387 /* ViewController2.swift in Sources */,
 				D903486B1E541D6300C9F626 /* FDDBaseTableViewCell.swift in Sources */,
 				D90348651E541CD500C9F626 /* ViewController.swift in Sources */,
 				D90348631E541CD500C9F626 /* HDTableViewCell.swift in Sources */,
 				D98FBB8A1E76A3DB008EDDC1 /* FDDPullToRefresh.swift in Sources */,
 				D903486E1E541D6300C9F626 /* FDDBaseTableViewController.swift in Sources */,
+				D941AB7F1E82A7410063A114 /* FDDBaseCellModel.swift in Sources */,
 				D90348821E5596A400C9F626 /* README.md in Sources */,
 				D903486C1E541D6300C9F626 /* FDDTableViewConverter.swift in Sources */,
 			);
