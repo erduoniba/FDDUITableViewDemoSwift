@@ -11,8 +11,17 @@ import UIKit
 
 extension UITableView {
     func cellForIndexPath(_ indexPath: IndexPath, cellClass: AnyClass?) -> FDDBaseTableViewCell? {
+        return self.cellForIndexPath(indexPath, cellClass: cellClass, cellReuseIdentifier: nil)
+    }
+
+    func cellForIndexPath(_ indexPath: IndexPath, cellClass: AnyClass?, cellReuseIdentifier: String?) -> FDDBaseTableViewCell? {
         if (cellClass?.isSubclass(of: FDDBaseTableViewCell.self))! {
-            let identifier = NSStringFromClass(cellClass!) + "ID"
+
+            var identifier = NSStringFromClass(cellClass!) + "ID"
+            if cellReuseIdentifier != nil {
+                identifier = cellReuseIdentifier!
+            }
+
             var cell = self.dequeueReusableCell(withIdentifier: identifier)
             if cell == nil {
                 self.register(cellClass, forCellReuseIdentifier: identifier)
@@ -34,7 +43,13 @@ extension FDDBaseTableViewController{
     
     @objc(tableView:cellForRowAtIndexPath:) open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
-        let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
+        let cell: FDDBaseTableViewCell
+        if cellModel.cellReuseIdentifier != nil {
+            cell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass, cellReuseIdentifier: cellModel.cellReuseIdentifier)!
+        }
+        else {
+            cell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
+        }
         cell.setCellData(cellModel.cellData, delegate: self)
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: self.dataArr.count)
         return cell
@@ -120,7 +135,13 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
         }
         
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
-        let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
+        let cell: FDDBaseTableViewCell
+        if cellModel.cellReuseIdentifier != nil {
+            cell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass, cellReuseIdentifier: cellModel.cellReuseIdentifier)!
+        }
+        else {
+            cell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
+        }
         cell.setCellData(cellModel.cellData, delegate: self.tableViewCarrier as! FDDBaseTableViewCellDelegate?)
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: self.dataArr.count)
         return cell

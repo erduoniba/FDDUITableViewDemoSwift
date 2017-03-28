@@ -15,6 +15,7 @@ open class FDDBaseCellModel: NSObject {
     open var delegate:   AnyObject?
     open var cellHeight: Float = 44
     open var staticCell: UITableViewCell?
+    open var cellReuseIdentifier: String?
     
     override init() {
         super.init()

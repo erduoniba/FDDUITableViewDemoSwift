@@ -1,5 +1,5 @@
 //
-//  FDDPullToRefresh.swift
+//  FDDPullToRefresher.swift
 //  PullToRefreshDemo
 //
 //  Created by denglibing on 2017/3/13.
@@ -12,9 +12,9 @@ import QuartzCore
 import PullToRefresh
 
 // 使用教程 https://yalantis.com/blog/how-we-built-customizable-pull-to-refresh-pull-to-cook-soup-animation/
-public class FDDPullToRefresh: PullToRefresh {
+public class FDDPullToRefresher: PullToRefresh {
     convenience init(at position: Position) {
-        let refreshView = FDDPullToRefreshView(at: position)
+        let refreshView = FDDPullToRefreshViewer(at: position)
         let animator = FDDPullToRefreshAnimator(refreshView: refreshView)
         self.init(refreshView: refreshView, animator: animator, height:refreshView.frame.size.height, position: position)
 
@@ -27,7 +27,7 @@ public class FDDPullToRefresh: PullToRefresh {
 
 
 // MARK: 自定义的PullToRefreshView
-public class FDDPullToRefreshView: UIView {
+public class FDDPullToRefreshViewer: UIView {
     var fddIcon = UIImageView()
     var fddCircle = UIImageView()
     var fddState = UILabel()
@@ -39,11 +39,11 @@ public class FDDPullToRefreshView: UIView {
         fddPostion = position
 
         fddCircle.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        fddCircle.image = UIImage(named: "fdd_logo_refresh_circle", in: Bundle(for: FDDPullToRefreshView.self), compatibleWith: nil)
+        fddCircle.image = UIImage(named: "fdd_logo_refresh_circle", in: Bundle(for: FDDPullToRefreshViewer.self), compatibleWith: nil)
         self.addSubview(fddCircle)
 
         fddIcon.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
-        fddIcon.image = UIImage(named: "fdd_logo_refresh", in: Bundle(for: FDDPullToRefreshView.self), compatibleWith: nil)
+        fddIcon.image = UIImage(named: "fdd_logo_refresh", in: Bundle(for: FDDPullToRefreshViewer.self), compatibleWith: nil)
         self.addSubview(fddIcon)
 
         fddState.frame = CGRect(x: 0, y: 0, width: 100, height: 20)
@@ -90,8 +90,8 @@ public class FDDPullToRefreshView: UIView {
 
 // MARK: 自定义PullToRefreshView的动画(Animator)
 public class FDDPullToRefreshAnimator: NSObject, RefreshViewAnimator {
-    private let refreshView: FDDPullToRefreshView
-    init(refreshView: FDDPullToRefreshView) {
+    private let refreshView: FDDPullToRefreshViewer
+    init(refreshView: FDDPullToRefreshViewer) {
         self.refreshView = refreshView
     }
 

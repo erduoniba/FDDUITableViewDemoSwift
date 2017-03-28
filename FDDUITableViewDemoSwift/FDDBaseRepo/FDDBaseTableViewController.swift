@@ -65,7 +65,7 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
         case .top:
             if !haveTopRefresh {
                 haveTopRefresh = true
-                tableView.addPullToRefresh(FDDPullToRefresh(at: .top)) { [weak self] in
+                tableView.addPullToRefresh(FDDPullToRefresher(at: .top)) { [weak self] in
                     withExtendedLifetime(self){
                         self?.pageIndex = 0
                         self?.requestData()
@@ -77,7 +77,7 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
         case .bottom:
             if !haveBottomRefresh {
                 haveBottomRefresh = true
-                tableView.addPullToRefresh(FDDPullToRefresh(at: .bottom)) { [weak self] in
+                tableView.addPullToRefresh(FDDPullToRefresher(at: .bottom)) { [weak self] in
                     withExtendedLifetime(self){
                         self?.pageIndex += 1
                         self?.requestData()

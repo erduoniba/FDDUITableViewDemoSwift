@@ -34,7 +34,7 @@ class ViewController: FDDBaseTableViewController {
                              "Welcome to the Swift community. Together we are working to build a better programming language for everyone.",
                              "– The Swift Team"]
         
-        for _ in 0...10 {
+        for _ in 0...6 {
             let randomIndex: Int = Int(arc4random() % 5)
             let cellData: String = randomSources[randomIndex]
             let cellModel = FDDBaseCellModel.modelWithCellClass(HDTableViewCell.self, cellHeight: HDTableViewCell.cellHeight(cellData as AnyObject?, boundWidth: Float(self.view.frame.size.width)), cellData: cellData as AnyObject?)
