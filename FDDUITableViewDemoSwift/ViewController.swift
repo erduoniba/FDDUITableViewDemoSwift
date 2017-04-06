@@ -19,12 +19,12 @@ class ViewController: FDDBaseTableViewController {
         super.viewDidLoad()
         
         self.title = "ViewController";
-        
-        self.disposeDataSources()
+
         self.disposeTableViewConverter()
         
         self.addRefresgView(at: .top)
-        self.addRefresgView(at: .bottom)
+
+        self.startRefreshing(at: .top)
     }
     
     func disposeDataSources () {
@@ -83,8 +83,8 @@ class ViewController: FDDBaseTableViewController {
                 self.dataArr.removeAllObjects()
                 self.disposeDataSources()
                 self.tableView.reloadData()
-                self.endRefreshing(at: .top)
                 self.addRefresgView(at: .bottom)
+                self.endRefreshing(at: .top)
             }
             else {
                 self.disposeDataSources()

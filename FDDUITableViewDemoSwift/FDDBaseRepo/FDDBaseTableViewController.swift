@@ -12,18 +12,18 @@ import PullToRefresh
 
 // MARK: 依赖房多多的FDDCustomerCommon/BaseViewController 和 GitHub的PullToRefresher
 open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDelegate {
-    
+
     open var dataArr = NSMutableArray()
     open var tableView: UITableView!
     open var tableViewConverter: FDDTableViewConverter!
     var tableViewStyle: UITableViewStyle = .plain
-    
+
     open var pageIndex: Int = 0
     open var pageSize: Int = 20
-    
+
     fileprivate var haveTopRefresh: Bool = false
     fileprivate var haveBottomRefresh: Bool = false
-    
+
     deinit {
         if haveTopRefresh {
             tableView.removePullToRefresh(tableView.topPullToRefresh!)
@@ -32,19 +32,19 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
             tableView.removePullToRefresh(tableView.bottomPullToRefresh!)
         }
     }
-    
+
     // 1:初始化带TableView的Controller
     convenience public init(tableViewStyle style: UITableViewStyle) {
         self.init()
-        
+
         tableViewStyle = style
     }
-    
+
     override open func viewDidLoad() {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = []
-        
+
         tableViewConverter = FDDTableViewConverter.init(withTableViewCarrier: self, dataSources: self.dataArr)
         tableView = UITableView(frame: self.view.bounds, style: tableViewStyle)
         tableView.autoresizingMask = [UIViewAutoresizing.flexibleHeight,
@@ -66,7 +66,7 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
             if !haveTopRefresh {
                 haveTopRefresh = true
                 tableView.addPullToRefresh(FDDPullToRefresher(at: .top)) { [weak self] in
-                    withExtendedLifetime(self){
+                    withExtendedLifetime(self) {
                         self?.pageIndex = 0
                         self?.requestData()
                     }
@@ -78,7 +78,7 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
             if !haveBottomRefresh {
                 haveBottomRefresh = true
                 tableView.addPullToRefresh(FDDPullToRefresher(at: .bottom)) { [weak self] in
-                    withExtendedLifetime(self){
+                    withExtendedLifetime(self) {
                         self?.pageIndex += 1
                         self?.requestData()
                     }
@@ -88,7 +88,12 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
         }
     }
 
-    // 2.1: 刷新追加后的回调方法
+    // 2.1: 主动调用刷新或者追加方法
+    open func startRefreshing(at position: Position) {
+        self.tableView.startRefreshing(at: position)
+    }
+
+    // 2.2: 刷新追加后的回调方法
     open func requestData() {
 
     }
@@ -96,8 +101,11 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
     // 3:停止刷新和追加
     open func endRefreshing(at position: Position) {
         self.tableView.endRefreshing(at: position)
+        if self.tableView.contentSize.height < self.tableView.frame.size.height {
+            self.hideRefreshView(at: .bottom)
+        }
     }
-    
+
     // 4:隐藏上拉或者上拉刷新控件
     open func hideRefreshView(at postopn: Position) {
         switch postopn {
@@ -105,7 +113,6 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
             if haveTopRefresh {
                 self.tableView.removePullToRefresh(tableView.topPullToRefresh!)
                 haveTopRefresh = false
-
             }
             break
         case .bottom:
@@ -117,11 +124,8 @@ open class FDDBaseTableViewController: UIViewController, FDDBaseTableViewCellDel
         }
     }
 
-    
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
 }

@@ -156,6 +156,7 @@
 				D9FDC5BB1E49C01D00F2A60F /* Resources */,
 				80610A355FE8597E31E7565E /* [CP] Embed Pods Frameworks */,
 				83F2585EFB8C2A5955F104EF /* [CP] Copy Pods Resources */,
+				D9CB73C91E960488000968FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -265,6 +266,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FDDUITableViewDemoSwift/Pods-FDDUITableViewDemoSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D9CB73C91E960488000968FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

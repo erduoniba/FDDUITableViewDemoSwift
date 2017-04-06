@@ -25,7 +25,6 @@ public class FDDPullToRefresher: PullToRefresh {
     }
 }
 
-
 // MARK: 自定义的PullToRefreshView
 public class FDDPullToRefreshViewer: UIView {
     var fddIcon = UIImageView()
@@ -71,7 +70,7 @@ public class FDDPullToRefreshViewer: UIView {
 
     public func startAnimation() {
         let rotationAnimation = CABasicAnimation.init(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = NSNumber.init(value: M_PI * 2)
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2)
         rotationAnimation.duration = 1
         rotationAnimation.isCumulative = false
         rotationAnimation.repeatCount = MAXFLOAT
@@ -118,10 +117,3 @@ public class FDDPullToRefreshAnimator: NSObject, RefreshViewAnimator {
         }
     }
 }
-
-
-
-
-
-
-

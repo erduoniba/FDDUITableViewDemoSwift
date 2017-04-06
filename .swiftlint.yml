@@ -1,0 +1,12 @@
+disabled_rules:
+  - variable_name 
+  - cyclomatic_complexity
+  - large_tuple
+  - class_delegate_protocol
+line_length: 200
+type_body_length: 500
+file_length: 800
+function_body_length: 60
+excluded:
+    - Pods
+

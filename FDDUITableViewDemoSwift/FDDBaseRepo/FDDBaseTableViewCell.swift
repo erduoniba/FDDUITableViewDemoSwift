@@ -14,7 +14,6 @@ public protocol FDDBaseTableViewCellDelegate: NSObjectProtocol {
     @objc optional func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?)
 }
 
-
 public enum FDDBaseTableViewCellType {
     case FDDBaseTableViewCellNone       //上下线都隐藏
     case FDDBaseTableViewCellAtFirst    //下线隐藏,按照group样式即第一个cell,originx=0
@@ -25,13 +24,13 @@ public enum FDDBaseTableViewCellType {
 }
 
 open class FDDBaseTableViewCell: UITableViewCell {
-    
+
     open weak var fddDelegate: FDDBaseTableViewCellDelegate?
     open var fddIndexPath: IndexPath?
     open var fddCellData: AnyObject?
     open var separateLineOffset: CGFloat = 0.0
     var sizeOnePx: CGFloat = 1.0 / UIScreen.main.scale
-    
+
     open var _cellType: FDDBaseTableViewCellType = .FDDBaseTableViewCellNormal
     open var cellType: FDDBaseTableViewCellType {
         get {
@@ -60,33 +59,32 @@ open class FDDBaseTableViewCell: UITableViewCell {
             self.setNeedsLayout()
         }
     }
-    
+
     open class func cellHeight(_ data: AnyObject?) -> Float {
         return self.cellHeight(data, boundWidth: Float(UIScreen.main.bounds.size.width))
     }
-    
+
     open class func cellHeight(_ data: AnyObject?, boundWidth: Float) -> Float {
         return 44.0
     }
-    
-    
+
     // MARK: - public func
     open func setBorderLine(backgroundColor: UIColor) {
         topLineView.backgroundColor = backgroundColor
         bottomLineView.backgroundColor = backgroundColor
     }
-    
+
     open func setCellData(_ data: AnyObject?) {
         self.setCellData(data, delegate: nil)
         print("子类实现")
     }
-    
+
     open func setCellData(_ data: AnyObject?, delegate: FDDBaseTableViewCellDelegate?) {
         fddCellData = data
         fddDelegate = delegate
         print("子类实现")
     }
-    
+
     open func setSeperatorAtIndexPath(_ indexPath: IndexPath, numberOfRowsInSection: Int) {
         if numberOfRowsInSection == 1 {
             self.cellType = .FDDBaseTableViewCellSingle
@@ -103,84 +101,79 @@ open class FDDBaseTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
+
     // MARK: - lazy init
     lazy var topLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 208/255.0, green: 208/255.0, blue: 208/255.0, alpha: 1)
         return view
     }()
-    
+
     lazy var bottomLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 208/255.0, green: 208/255.0, blue: 208/255.0, alpha: 1)
         return view
     }()
-    
+
     // MARK: - override
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         self.setup()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+
         self.setup()
     }
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
-    
+
     override open func layoutSubviews() {
         super.layoutSubviews()
-        
+
         switch _cellType {
         case .FDDBaseTableViewCellNone:
             topLineView.frame = CGRect(x: separateLineOffset, y: 0.0, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             bottomLineView.frame = CGRect(x: separateLineOffset, y: self.bounds.maxY - sizeOnePx, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             break
-            
+
         case .FDDBaseTableViewCellAtFirst:
             topLineView.frame = CGRect(x: 0, y: 0.0, width: self.frame.size.width, height: sizeOnePx)
             bottomLineView.frame = CGRect(x: separateLineOffset, y: self.bounds.maxY - sizeOnePx, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             break
-            
+
         case .FDDBaseTableViewCellAtMiddle, .FDDBaseTableViewCellNormal:
             topLineView.frame = CGRect(x: separateLineOffset, y: 0.0, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             bottomLineView.frame = CGRect(x: separateLineOffset, y: self.bounds.maxY - sizeOnePx, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             break
-            
+
         case .FDDBaseTableViewCellAtLast:
             topLineView.frame = CGRect(x: separateLineOffset, y: 0.0, width: self.frame.size.width - separateLineOffset, height: sizeOnePx)
             bottomLineView.frame = CGRect(x: 0, y: self.bounds.maxY - sizeOnePx, width: self.frame.size.width, height: sizeOnePx)
             break
-            
+
         case .FDDBaseTableViewCellSingle:
             topLineView.frame = CGRect(x: 0, y: 0.0, width: self.frame.size.width, height: sizeOnePx)
             bottomLineView.frame = CGRect(x: 0, y: self.bounds.maxY - sizeOnePx, width: self.frame.size.width, height: sizeOnePx)
             break
         }
     }
-    
+
     override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
     }
-    
-    
+
     // MARK: - private func
     private func setup() {
         self.selectionStyle = .none
-        
+
         self.contentView.addSubview(self.topLineView)
         self.contentView.addSubview(self.bottomLineView)
     }
-
 }
-
-

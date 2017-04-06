@@ -33,14 +33,13 @@ extension UITableView {
     }
 }
 
-
 // 通过重载来实现特殊的cell
 extension FDDBaseTableViewController{
-    
+
     @objc(tableView:numberOfRowsInSection:) open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
     }
-    
+
     @objc(tableView:cellForRowAtIndexPath:) open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
         let cell: FDDBaseTableViewCell
@@ -54,12 +53,12 @@ extension FDDBaseTableViewController{
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: self.dataArr.count)
         return cell
     }
-    
+
     @objc(tableView:heightForRowAtIndexPath:) open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
         return CGFloat(cellModel.cellHeight)
     }
-    
+
     // MARK: - FDDBaseTableViewCellDelegate
     open func fddTableViewCell(cell: FDDBaseTableViewCell, object: AnyObject?) {
         if cell.isMember(of: FDDBaseTableViewCell.self) {
@@ -69,32 +68,31 @@ extension FDDBaseTableViewController{
 }
 
 
-
 typealias fddTableViewConterterBlock = (_ params: Array<Any>) -> AnyObject?
 
 // 通过转换类来处理通用的tableView方法，特殊需要自己处理的使用 registerTableViewMethod 方式处理
 public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableViewDelegate {
-    
+
     deinit {
         print(NSStringFromClass(FDDTableViewConverter.self) + " dealloc")
     }
-    
+
     private var selectorBlocks = NSMutableDictionary()
     open var dataArr = NSMutableArray()
     open weak var tableViewCarrier: AnyObject?
-    
+
     convenience public init(withTableViewCarrier tableViewCarrier: AnyObject, dataSources: NSMutableArray) {
         self.init()
         self.tableViewCarrier = tableViewCarrier
         self.dataArr = dataSources
     }
-    
+
     open func registerTableViewMethod(selector: Selector, handleParams params: fddTableViewConterterBlock) {
         selectorBlocks.setObject(params, forKey: NSStringFromSelector(selector) as NSCopying)
     }
-    
+
     private func converterFunction(_ function: String, params: Array<Any>) -> AnyObject? {
-        
+
         let result: Bool = self.selectorBlocks.allKeys.contains { ele in
             if ele as! String == function {
                 return true
@@ -103,37 +101,37 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
                 return false
             }
         }
-        
+
         if result {
             let block: fddTableViewConterterBlock = self.selectorBlocks.object(forKey: function) as! fddTableViewConterterBlock
             return block(params) as AnyObject?
         }
-        
+
         return nil
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArr.count
     }
-    
+
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let selector = #selector(tableView(_:heightForRowAt:))
         let cellHeight = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
         if (cellHeight != nil)  {
             return cellHeight as! CGFloat
         }
-        
+
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
         return CGFloat(cellModel.cellHeight)
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selector = #selector(tableView(_:cellForRowAt:))
         let closureCell = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
         if (closureCell != nil)  {
             return closureCell as! UITableViewCell
         }
-        
+
         let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
         let cell: FDDBaseTableViewCell
         if cellModel.cellReuseIdentifier != nil {
@@ -146,12 +144,14 @@ public class FDDTableViewConverter: NSObject, UITableViewDataSource, UITableView
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: self.dataArr.count)
         return cell
     }
-    
-    
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selector = #selector(tableView(_:didSelectRowAt:))
         _ = self.converterFunction(NSStringFromSelector(selector), params: [tableView, indexPath])
     }
-    
-    
+
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let selector = #selector(scrollViewDidScroll(_:))
+        _ = self.converterFunction(NSStringFromSelector(selector), params: [scrollView])
+    }
 }
