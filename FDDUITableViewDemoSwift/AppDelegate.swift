@@ -10,7 +10,7 @@ import UIKit
 
 //import FeedBackIOS
 
-typealias resultBlock = (_ params: Array<Any>) -> Any
+typealias ResultBlock = (_ params: [Int]) -> Int
 
 typealias MyClosure = (_ a: Int, _ b: Int) -> Int
 
@@ -18,34 +18,36 @@ typealias MyClosure = (_ a: Int, _ b: Int) -> Int
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    var bugWindow : FDDBugWindow?
+    //    var bugWindow : FDDBugWindow?
+
+    func register(index: Int, pram: ResultBlock) {
+        print(pram([1, 2, 2]))
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let resultBlocks = { (val1: Int, Val2: Int) -> Int in
+
+        let sBlock = { (val1: Int, Val2: Int) -> Int in
             return val1 + Val2
         }
-        
-        
-        self.register(index: 0) { (param: Array) -> Any in
+
+        self.register(index: 0) { (_ param: Array) -> Int in
             return 1
         }
-        
-        print("result: \(resultBlocks(12, 43))")
-        
-        
+
+        print("result: \(sBlock(12, 43))")
+
         typealias MyClosure = (_ a: Int, _ b: Int) -> Int
-        var closure : MyClosure?
+        var closure: MyClosure?
         closure = { (a: Int, b: Int) -> Int in
             return a+b
         }
-        print(closure!(1, 2));
-        
+        print(closure!(1, 2))
+
         self.doSomeThing { (a: Int, b: Int) -> Int in
             return a * b
         }
-        
+
         //        bugWindow = FDDBugWindow.sharedInstance
         //        bugWindow?.isHidden = true;       //是否隐藏提bug按钮，隐藏后将只支持摇一摇提bug
         //        bugWindow?.redmineProjectId = 158;    //项目Id， 2表示经纪人iOS
@@ -53,16 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        bugWindow?.redmineUrl = "https://redmine.fangdd.net/issues.json";    //redmine后台地址
         //        bugWindow?.redmineKey = "e31cace473b669d5b4d954c3365b09e3d63cc25c";   //redmine token
         //        bugWindow?.run();                   //启动
-        
+
         return true
     }
-    
+
     func doSomeThing(closure: MyClosure) {
         print(closure(1, 2))
-    }
-    
-    func register(index: Int, pram: resultBlock) {
-        print(pram(["1", "2", "2"]))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -86,7 +84,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

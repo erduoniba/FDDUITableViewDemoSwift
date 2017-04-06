@@ -57,7 +57,7 @@ class ViewController2: FDDBaseTableViewController, UITableViewDelegate, UITableV
     }
 
     override internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellModel: FDDBaseCellModel = self.dataArr.object(at: indexPath.row) as! FDDBaseCellModel
+        let cellModel: FDDBaseCellModel = (self.dataArr.object(at: indexPath.row) as? FDDBaseCellModel)!
         let cell: FDDBaseTableViewCell = tableView.cellForIndexPath(indexPath, cellClass: cellModel.cellClass)!
         cell.setCellData(cellModel.cellData, delegate: self)
         cell.setSeperatorAtIndexPath(indexPath, numberOfRowsInSection: 5)

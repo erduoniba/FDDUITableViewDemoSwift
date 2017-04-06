@@ -39,7 +39,7 @@ class HDTableViewCell: FDDBaseTableViewCell {
     }
 
     override class func cellHeight(_ data: AnyObject?, boundWidth: Float) -> Float {
-        let labelText: NSString = data as! NSString
+        let labelText: NSString = (data as? NSString)!
         let dic = NSDictionary(object: UIFont.systemFont(ofSize: 14), forKey: NSFontAttributeName as NSCopying)
         let rect = labelText.boundingRect(with: CGSize(width: CGFloat(boundWidth - 20), height: 999.0),
                                           options: .usesLineFragmentOrigin,
@@ -48,7 +48,7 @@ class HDTableViewCell: FDDBaseTableViewCell {
         return 20.0 + Float(rect.size.height)
     }
 
-    func tableViewCellAction() -> Void {
+    func tableViewCellAction() {
         if (self.fddDelegate != nil) && (self.fddDelegate?.responds(to: #selector(FDDBaseTableViewCellDelegate.fddTableViewCell(cell:object:))))! {
             self.fddDelegate?.fddTableViewCell!(cell: self, object: nil)
         }
